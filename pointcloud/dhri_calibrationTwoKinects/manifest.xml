@@ -1,0 +1,15 @@
+<package>
+  <description brief="dhri_calibrationTwoKinects">
+
+     dhri_calibrationTwoKinects
+
+  </description>
+  <author>dhri-karl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dhri_calibrationTwoKinects</url>
+  <depend package="roscpp"/>
+
+</package>
+
+

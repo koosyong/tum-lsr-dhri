@@ -1,0 +1,35 @@
+<!-- Default frames for Kinect/PSDK5 devices
+     Places depth and RGB cameras in the same plane with 2.5cm baseline.
+     Calibration may improve results, but these defaults are reasonably accurate.
+-->
+<launch>
+  <rosparam command="load" file="camera_parameter.yaml" />
+
+  <arg name="pi/2" value="1.5707963267948966" />
+  <arg name="optical_rotate" value="0 0 0 -$(arg pi/2) 0 -$(arg pi/2)" />
+
+  <arg name="camera_x" value="0" />
+  <arg name="camera_y" value="-0.5" />
+  <arg name="camera_height" value="0.90" />
+  <arg name="camera_pitch" value="-0.02" />
+  <arg name="camera_roll" value="3.46" />
+
+  <node pkg="tf" type="static_transform_publisher" name="camera_base"
+        args="$(arg camera_x) $(arg camera_y) 0 0 0 0  /origin /camera_ground 100" />  
+
+  <node pkg="tf" type="static_transform_publisher" name="camera_base_link0"
+        args="0 0 $(arg camera_height) 0 $(arg camera_pitch) $(arg camera_roll) /camera_ground /camera_link 100" />  
+
+  <node pkg="tf" type="static_transform_publisher" name="camera_base_link"
+        args="0 -0.02  0 0 0 0  /camera_link /camera_depth_frame 100" />  
+  <node pkg="tf" type="static_transform_publisher" name="camera_base_link1"
+        args="0 -0.045 0 0 0 0  /camera_link /camera_rgb_frame 100" />  
+  <node pkg="tf" type="static_transform_publisher" name="camera_base_link2"
+        args="$(arg optical_rotate) /camera_depth_frame /camera_depth_optical_frame  100" />  
+  <node pkg="tf" type="static_transform_publisher" name="camera_base_link3"
+        args="$(arg optical_rotate) /camera_rgb_frame /camera_rgb_optical_frame 100" />  
+  
+</launch>
+
+<!-- TODO Could instead store these in camera_pose_calibration format for consistency
+     with user calibrations. Blocked on camera_pose_calibration having sane dependencies. -->

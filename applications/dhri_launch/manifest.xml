@@ -1,0 +1,14 @@
+<package>
+  <description brief="dhri_launch">
+
+     dhri_launch
+
+  </description>
+  <author>dhri-karl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dhri_launch</url>
+
+</package>
+
+

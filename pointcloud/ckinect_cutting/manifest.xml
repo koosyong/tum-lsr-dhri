@@ -1,0 +1,22 @@
+<package>
+  <description brief="ckinect_cutting">
+
+     ckinect_cutting
+	input : pointcloud from kinect
+	output : filtered pointcloud
+	methods : 
+
+  </description>
+  <author>koosy</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ckinect_filtering</url>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="tf"/>
+  <depend package="pcl_ros"/>
+
+</package>
+
+

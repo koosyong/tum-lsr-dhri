@@ -1,0 +1,15 @@
+<package>
+  <description brief="dhri_calibrationOneKinect">
+
+     dhri_calibrationOneKinect
+
+  </description>
+  <author>dhri-karl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dhri_calibrationOneKinect</url>
+  <depend package="roscpp"/>
+
+</package>
+
+

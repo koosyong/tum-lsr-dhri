@@ -1,0 +1,15 @@
+<package>
+  <description brief="dhri_filteringPointcloud">
+
+     dhri_filteringPointcloud
+
+  </description>
+  <author>dhri-karl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dhri_filteringPointcloud</url>
+  <depend package="roscpp"/>
+
+</package>
+
+
