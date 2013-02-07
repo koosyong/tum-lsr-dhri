@@ -38,6 +38,7 @@ private:
     CvMat* object_points;
     int board_w;
     int board_h;
+    float board_width;
     int board_n;
     CvMat* intrinsic_matrix;
     CvMat* distortion_coeffs;

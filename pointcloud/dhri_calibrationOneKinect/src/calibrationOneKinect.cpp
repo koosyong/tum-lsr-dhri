@@ -4,17 +4,16 @@
 #include "mainwindow.h"
 #include <QtGui>
 
-bool isCalibration = true;
-
 int main (int argc, char** argv)
 {
     ros::init (argc, argv, "dhri_calibrationOneKinect");
 
     QApplication a(argc, argv);
     MainWindow view;
+    view.path = QString(argv[1]);
+    view.fileName = QString(argv[2]);
 
-    if(isCalibration) view.show();
-    else view.pubTFCalib();
+    view.show();
 
     return a.exec();
 }

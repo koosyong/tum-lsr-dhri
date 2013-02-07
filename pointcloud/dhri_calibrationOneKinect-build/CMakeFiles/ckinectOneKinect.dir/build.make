@@ -164,9 +164,68 @@ CMakeFiles/ckinectOneKinect.dir/src/mainwindow.o.provides: CMakeFiles/ckinectOne
 
 CMakeFiles/ckinectOneKinect.dir/src/mainwindow.o.provides.build: CMakeFiles/ckinectOneKinect.dir/src/mainwindow.o
 
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: CMakeFiles/ckinectOneKinect.dir/flags.make
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.cpp
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/roslang/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/roscpp/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/rospy/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/rostest/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/roswtf/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/message_filters/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/openni_kinect/openni/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/vision_opencv/opencv2/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/vision_opencv/cv_bridge/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/rosbag/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/roslib/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/bond_core/bond/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/bond_core/smclib/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/bond_core/bondcpp/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/rosservice/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/common_rosdeps/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/perception_pcl/pcl_ros/manifest.xml
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/bond_core/bond/msg_gen/generated
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.cpp
+
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.cpp > CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.i
+
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.cpp -o CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.s
+
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o.requires:
+.PHONY : CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o.requires
+
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o.provides: CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o.requires
+	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o.provides.build
+.PHONY : CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o.provides
+
+CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o.provides.build: CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o
+
 CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.o: CMakeFiles/ckinectOneKinect.dir/flags.make
 CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.cpp
 
@@ -189,7 +248,7 @@ CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/c
 
 CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o: CMakeFiles/ckinectOneKinect.dir/flags.make
 CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp
 
@@ -212,7 +271,7 @@ CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/c
 
 CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.o: CMakeFiles/ckinectOneKinect.dir/flags.make
 CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.cpp
 
@@ -234,13 +293,18 @@ CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/c
 CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.o.provides.build: CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.o
 
 ui_mainwindow.h: /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/mainwindow.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_mainwindow.h"
 	/usr/bin/uic-qt4 -o /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/ui_mainwindow.h /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/mainwindow.ui
 
+ui_dialogcalibration.h: /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_8)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_dialogcalibration.h"
+	/usr/bin/uic-qt4 -o /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/ui_dialogcalibration.h /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.ui
+
 CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o: CMakeFiles/ckinectOneKinect.dir/flags.make
 CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o: src/moc_mainwindow.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/src/moc_mainwindow.cxx
 
@@ -261,9 +325,32 @@ CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o.provides: CMakeFiles/ckinec
 
 CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o.provides.build: CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o
 
+CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o: CMakeFiles/ckinectOneKinect.dir/flags.make
+CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o: src/moc_dialogcalibration.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/src/moc_dialogcalibration.cxx
+
+CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/src/moc_dialogcalibration.cxx > CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.i
+
+CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/src/moc_dialogcalibration.cxx -o CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.s
+
+CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o.requires:
+.PHONY : CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o.requires
+
+CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o.provides: CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o.requires
+	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o.provides.build
+.PHONY : CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o.provides
+
+CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o.provides.build: CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o
+
 CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectcalibrationstereo.o: CMakeFiles/ckinectOneKinect.dir/flags.make
 CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectcalibrationstereo.o: __/include/moc_ckinectcalibrationstereo.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectcalibrationstereo.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectcalibrationstereo.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/__/include/moc_ckinectcalibrationstereo.cxx
 
@@ -286,7 +373,7 @@ CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectcalibrationstereo.o.provid
 
 CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectthread.o: CMakeFiles/ckinectOneKinect.dir/flags.make
 CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectthread.o: __/include/moc_ckinectthread.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectthread.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectthread.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/__/include/moc_ckinectthread.cxx
 
@@ -309,7 +396,7 @@ CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectthread.o.provides.build: C
 
 CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o: CMakeFiles/ckinectOneKinect.dir/flags.make
 CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o: __/include/moc_ckinecttfpublisher.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/__/include/moc_ckinecttfpublisher.cxx
 
@@ -331,22 +418,27 @@ CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o.provides: CM
 CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o.provides.build: CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o
 
 src/moc_mainwindow.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/mainwindow.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_mainwindow.cxx"
 	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/src/moc_mainwindow.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/mainwindow.h
 
+src/moc_dialogcalibration.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_15)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_dialogcalibration.cxx"
+	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/src/moc_dialogcalibration.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.h
+
 __/include/moc_ckinectcalibrationstereo.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating __/include/moc_ckinectcalibrationstereo.cxx"
 	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/__/include/moc_ckinectcalibrationstereo.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.h
 
 __/include/moc_ckinectthread.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating __/include/moc_ckinectthread.cxx"
 	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/__/include/moc_ckinectthread.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.h
 
 __/include/moc_ckinecttfpublisher.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating __/include/moc_ckinecttfpublisher.cxx"
 	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect-build/__/include/moc_ckinecttfpublisher.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.h
 
@@ -354,10 +446,12 @@ __/include/moc_ckinecttfpublisher.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/i
 ckinectOneKinect_OBJECTS = \
 "CMakeFiles/ckinectOneKinect.dir/src/calibrationOneKinect.o" \
 "CMakeFiles/ckinectOneKinect.dir/src/mainwindow.o" \
+"CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o" \
 "CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.o" \
 "CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o" \
 "CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.o" \
 "CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o" \
+"CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o" \
 "CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectcalibrationstereo.o" \
 "CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectthread.o" \
 "CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o"
@@ -367,10 +461,12 @@ ckinectOneKinect_EXTERNAL_OBJECTS =
 
 /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/src/calibrationOneKinect.o
 /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/src/mainwindow.o
+/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o
 /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.o
 /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o
 /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.o
 /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o
+/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o
 /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectcalibrationstereo.o
 /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectthread.o
 /home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/bin/ckinectOneKinect: CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o
@@ -388,10 +484,12 @@ CMakeFiles/ckinectOneKinect.dir/build: /home/dhri-karl/tum-lsr-dhri/pointcloud/d
 
 CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/src/calibrationOneKinect.o.requires
 CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/src/mainwindow.o.requires
+CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o.requires
 CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.o.requires
 CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o.requires
 CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.o.requires
 CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/src/moc_mainwindow.o.requires
+CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o.requires
 CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectcalibrationstereo.o.requires
 CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinectthread.o.requires
 CMakeFiles/ckinectOneKinect.dir/requires: CMakeFiles/ckinectOneKinect.dir/__/include/moc_ckinecttfpublisher.o.requires
@@ -402,7 +500,9 @@ CMakeFiles/ckinectOneKinect.dir/clean:
 .PHONY : CMakeFiles/ckinectOneKinect.dir/clean
 
 CMakeFiles/ckinectOneKinect.dir/depend: ui_mainwindow.h
+CMakeFiles/ckinectOneKinect.dir/depend: ui_dialogcalibration.h
 CMakeFiles/ckinectOneKinect.dir/depend: src/moc_mainwindow.cxx
+CMakeFiles/ckinectOneKinect.dir/depend: src/moc_dialogcalibration.cxx
 CMakeFiles/ckinectOneKinect.dir/depend: __/include/moc_ckinectcalibrationstereo.cxx
 CMakeFiles/ckinectOneKinect.dir/depend: __/include/moc_ckinectthread.cxx
 CMakeFiles/ckinectOneKinect.dir/depend: __/include/moc_ckinecttfpublisher.cxx

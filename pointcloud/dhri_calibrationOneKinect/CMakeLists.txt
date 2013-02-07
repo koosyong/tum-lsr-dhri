@@ -44,6 +44,7 @@ include_directories(
 set( sources
     src/calibrationOneKinect.cpp
     src/mainwindow.cpp
+    src/dialogcalibration.cpp
     ${INCLUDE}/ckinectcalibrationstereo.cpp
     ${INCLUDE}/ckinectthread.cpp
     ${INCLUDE}/ckinecttfpublisher.cpp
@@ -51,6 +52,7 @@ set( sources
 
 set( headers
     src/mainwindow.h
+    src/dialogcalibration.h
     ${INCLUDE}/ckinectcalibrationstereo.h
     ${INCLUDE}/ckinectthread.h
     ${INCLUDE}/ckinecttfpublisher.h

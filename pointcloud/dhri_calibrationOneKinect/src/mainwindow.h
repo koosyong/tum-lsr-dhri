@@ -2,8 +2,8 @@
 #define MAINWINDOW_H
 
 #include <tf/transform_broadcaster.h>
-#include "ckinectcalibrationstereo.h"
 #include "ckinecttfpublisher.h"
+#include "dialogcalibration.h"
 
 #include <QMainWindow>
 
@@ -27,30 +27,29 @@ private:
     void initStereoAuto();
     void terminateStereoAuto();
     void calQuaternion();
-    QImage IplImage2QImage(const IplImage *iplImage);
-    IplImage *irImage;
 
 private slots:
-    void update_tf();
-    void updateIR(IplImage* _irImage);
-    void updateTF(CvMat* rotMat, CvMat* transMat);
+    void update_tf(vector<double> camera_param);
+    void on_actionCalibration_triggered();
 
-    void on_horizontalSlider_camera_x_valueChanged(int value);
-    void on_horizontalSlider_camera_y_valueChanged(int value);
-    void on_horizontalSlider_camera_z_valueChanged(int value);
-    void on_horizontalSlider_camera_yaw_valueChanged(int value);
-    void on_horizontalSlider_camera_pitch_valueChanged(int value);
-    void on_horizontalSlider_camera_roll_valueChanged(int value);
 
-    void on_actionStereo_Auto_triggered(bool checked);
-    void on_pushButton_clicked();
+    void on_actionSave_triggered();
+
+    void on_actionSaveAs_triggered();
 
 private:
 
     Ui::MainWindow *ui;
-    CKinectCalibrationStereo *calibration;
+
     QTimer *timer_tf;
     CKinectTFPublisher tf;
+    DialogCalibration *digCali;
+    QString image;
+
+public:
+    QString path;
+    QString fileName;
+    QString filePath;
 
     double camera_x;
     double camera_y;

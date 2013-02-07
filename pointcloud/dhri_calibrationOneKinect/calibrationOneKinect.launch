@@ -12,9 +12,7 @@
   <arg name="bond" value="false" />
   <arg name="respawn" value="$(arg bond)" />
   <arg name="debug" value="false" />
-
-  <rosparam command="load" file="$(find dhri_calibrationOneKinect)/ckinect_calibration_stereo.yaml" />
-  <node name="dhri_calibrationOneKinect" pkg="dhri_calibrationOneKinect" type="ckinectOneKinect" />
+  <arg name="camera" default="parameter.yaml" />
 
   <include file="$(find openni_launch)/launch/includes/manager.launch">
     <arg name="name" value="camera_nodelet_manager" />
@@ -49,5 +47,8 @@
       <arg name="respawn"               value="$(arg respawn)" />
     </include>
   </group>
+
+  <rosparam command="load" file="$(find dhri_calibrationOneKinect)/$(arg camera)" />
+  <node name="dhri_calibrationOneKinect" pkg="dhri_calibrationOneKinect" type="ckinectOneKinect" args="$(find dhri_calibrationOneKinect) $(arg camera)" />
 
 </launch>

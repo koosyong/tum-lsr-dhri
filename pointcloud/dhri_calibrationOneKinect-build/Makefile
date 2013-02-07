@@ -409,6 +409,21 @@ src/calibrationOneKinect.s:
 .PHONY : src/calibrationOneKinect.s
 
 # target to build an object file
+src/dialogcalibration.o:
+	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.o
+.PHONY : src/dialogcalibration.o
+
+# target to preprocess a source file
+src/dialogcalibration.i:
+	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.i
+.PHONY : src/dialogcalibration.i
+
+# target to generate assembly for a file
+src/dialogcalibration.s:
+	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/dialogcalibration.s
+.PHONY : src/dialogcalibration.s
+
+# target to build an object file
 src/mainwindow.o:
 	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/mainwindow.o
 .PHONY : src/mainwindow.o
@@ -422,6 +437,21 @@ src/mainwindow.i:
 src/mainwindow.s:
 	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/mainwindow.s
 .PHONY : src/mainwindow.s
+
+# target to build an object file
+src/moc_dialogcalibration.o:
+	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.o
+.PHONY : src/moc_dialogcalibration.o
+
+# target to preprocess a source file
+src/moc_dialogcalibration.i:
+	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.i
+.PHONY : src/moc_dialogcalibration.i
+
+# target to generate assembly for a file
+src/moc_dialogcalibration.s:
+	$(MAKE) -f CMakeFiles/ckinectOneKinect.dir/build.make CMakeFiles/ckinectOneKinect.dir/src/moc_dialogcalibration.s
+.PHONY : src/moc_dialogcalibration.s
 
 # target to build an object file
 src/moc_mainwindow.o:
@@ -483,9 +513,15 @@ help:
 	@echo "... src/calibrationOneKinect.o"
 	@echo "... src/calibrationOneKinect.i"
 	@echo "... src/calibrationOneKinect.s"
+	@echo "... src/dialogcalibration.o"
+	@echo "... src/dialogcalibration.i"
+	@echo "... src/dialogcalibration.s"
 	@echo "... src/mainwindow.o"
 	@echo "... src/mainwindow.i"
 	@echo "... src/mainwindow.s"
+	@echo "... src/moc_dialogcalibration.o"
+	@echo "... src/moc_dialogcalibration.i"
+	@echo "... src/moc_dialogcalibration.s"
 	@echo "... src/moc_mainwindow.o"
 	@echo "... src/moc_mainwindow.i"
 	@echo "... src/moc_mainwindow.s"

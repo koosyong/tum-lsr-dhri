@@ -17,6 +17,8 @@ CKinectCalibrationStereo::CKinectCalibrationStereo(string _inputTopic, int _maxI
 
     board_w = 10;
     board_h = 7;
+    board_width = 0.07;
+
     board_n = board_w * board_h;
     image_points = cvCreateMat(board_n*maxIter,2,CV_32FC1);
     object_points = cvCreateMat(board_n*maxIter,3,CV_32FC1);
@@ -137,8 +139,8 @@ void CKinectCalibrationStereo::image_cb (const sensor_msgs::ImageConstPtr& input
                 {
                     CV_MAT_ELEM(*image_points, float, successes*board_n+j, 0) = corners[j].x;
                     CV_MAT_ELEM(*image_points, float, successes*board_n+j, 1) = corners[j].y;
-                    CV_MAT_ELEM(*object_points, float, successes*board_n+j, 0) = j/board_w*0.10;
-                    CV_MAT_ELEM(*object_points, float, successes*board_n+j, 1) = j%board_w*0.10;
+                    CV_MAT_ELEM(*object_points, float, successes*board_n+j, 0) = j/board_w*board_width;
+                    CV_MAT_ELEM(*object_points, float, successes*board_n+j, 1) = j%board_w*board_width;
                     CV_MAT_ELEM(*object_points, float, successes*board_n+j, 2) = 0.0f;
                 }
                 //                CV_MAT_ELEM(*point_counts, int, 0, 0) = board_n;

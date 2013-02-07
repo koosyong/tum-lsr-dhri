@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ckinectcalibrationstereo.h'
 **
-** Created: Tue Feb 5 18:36:24 2013
+** Created: Thu Feb 7 18:54:01 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

@@ -300,6 +300,8 @@
       </Build>
       <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/calibrationOneKinect.cpp">
       </Unit>
+      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.cpp">
+      </Unit>
       <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/mainwindow.cpp">
       </Unit>
       <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectcalibrationstereo.cpp">
@@ -307,6 +309,10 @@
       <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinecttfpublisher.cpp">
       </Unit>
       <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp">
+      </Unit>
+      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.h">
+      </Unit>
+      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/dialogcalibration.ui">
       </Unit>
       <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_calibrationOneKinect/src/mainwindow.h">
       </Unit>

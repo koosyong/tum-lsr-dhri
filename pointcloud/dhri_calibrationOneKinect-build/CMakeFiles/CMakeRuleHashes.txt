@@ -17,5 +17,7 @@ c2b3de2c045c9074bd38e77c3a2f8a8d CMakeFiles/clean-test-results
 c54722051b645a5692f6779aafe6d998 __/include/moc_ckinectcalibrationstereo.cxx
 31d7ea532c6b2a7261d93d752ebb7a88 __/include/moc_ckinecttfpublisher.cxx
 84967f7c44f2b3c4462c13e7dac62316 __/include/moc_ckinectthread.cxx
+6b0ff3e6e2ab1721b15d790c6ac21fc9 src/moc_dialogcalibration.cxx
 6b734787698d175375c1f0745340aeb6 src/moc_mainwindow.cxx
+655c96ba4bc7967a802f4a10625821a6 ui_dialogcalibration.h
 729a9c0269b71a4a67f69341c44aecbc ui_mainwindow.h

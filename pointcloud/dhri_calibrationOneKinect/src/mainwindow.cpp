@@ -2,58 +2,56 @@
 #include "ui_mainwindow.h"
 #include <iostream>
 #include <QTimer>
+#include <QFile>
+#include <QTextStream>
+#include <QFileDialog>
+
 #define pi 3.141592
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    digCali = 0;
+    image.append("/camera/rgb/image_mono");
     ros::start();
     ros::NodeHandle n;
 
     ui->setupUi(this);
     readParams();
     initGui();
+    pubTFCalib();
 
-    camera_x = 0.0;
-    camera_y = 0.0;
-    camera_z = 0.0;
-    camera_qx = 0.0;
-    camera_qy = 0.0;
-    camera_qz = 0.0;
-    camera_qw = 0.0;
-
-
-
-    calibration = new CKinectCalibrationStereo("/camera/rgb/image_mono");
 }
 
 MainWindow::~MainWindow()
 {
-    terminateStereoAuto();
+    if(digCali)
+        digCali->terminateAuto();
+
     delete ui;
 }
 
 void MainWindow::readParams()
 {
     bool isOK = 1;
-    if(ros::param::has("/ckinect/calibration/camera_x"))
-        ros::param::get("/ckinect/calibration/camera_x", camera_x);
+    if(ros::param::has("/dhri/calibrationOneKinect/x"))
+        ros::param::get("/dhri/calibrationOneKinect/x", camera_x);
     else isOK = 0;
-    if(ros::param::has("/ckinect/calibration/camera_y"))
-        ros::param::get("/ckinect/calibration/camera_y", camera_y);
+    if(ros::param::has("/dhri/calibrationOneKinect/y"))
+        ros::param::get("/dhri/calibrationOneKinect/y", camera_y);
     else isOK = 0;
-    if(ros::param::has("/ckinect/calibration/camera_z"))
-        ros::param::get("/ckinect/calibration/camera_z", camera_z);
+    if(ros::param::has("/dhri/calibrationOneKinect/z"))
+        ros::param::get("/dhri/calibrationOneKinect/z", camera_z);
     else isOK = 0;
-    if(ros::param::has("/ckinect/calibration/camera_yaw"))
-        ros::param::get("/ckinect/calibration/camera_yaw", camera_yaw);
+    if(ros::param::has("/dhri/calibrationOneKinect/yaw"))
+        ros::param::get("/dhri/calibrationOneKinect/yaw", camera_yaw);
     else isOK = 0;
-    if(ros::param::has("/ckinect/calibration/camera_pitch"))
-        ros::param::get("/ckinect/calibration/camera_pitch", camera_pitch);
+    if(ros::param::has("/dhri/calibrationOneKinect/pitch"))
+        ros::param::get("/dhri/calibrationOneKinect/pitch", camera_pitch);
     else isOK = 0;
-    if(ros::param::has("/ckinect/calibration/camera_roll"))
-        ros::param::get("/ckinect/calibration/camera_roll", camera_roll);
+    if(ros::param::has("/dhri/calibrationOneKinect/roll"))
+        ros::param::get("/dhri/calibrationOneKinect/roll", camera_roll);
     else isOK = 0;
 
 
@@ -67,19 +65,12 @@ void MainWindow::readParams()
 
 void MainWindow::initGui()
 {
-    ui->horizontalSlider_camera_x->setValue(camera_x*1000);
-    ui->doubleSpinBox_camera_x->setValue(camera_x);
-    ui->horizontalSlider_camera_y->setValue(camera_y*1000);
-    ui->doubleSpinBox_camera_y->setValue(camera_y);
-    ui->horizontalSlider_camera_z->setValue(camera_z*1000);
-    ui->doubleSpinBox_camera_z->setValue(camera_z);
-    ui->horizontalSlider_camera_yaw->setValue(camera_yaw*100);
-    ui->doubleSpinBox_camera_yaw->setValue(camera_yaw);
-    ui->horizontalSlider_camera_pitch->setValue(camera_pitch*100);
-    ui->doubleSpinBox_camera_pitch->setValue(camera_pitch);
-    ui->horizontalSlider_camera_roll->setValue(camera_roll*100);
-    ui->doubleSpinBox_camera_roll->setValue(camera_roll);
-
+    ui->lineEdit_x->setText(QString::number(camera_x));
+    ui->lineEdit_y->setText(QString::number(camera_y));
+    ui->lineEdit_z->setText(QString::number(camera_z));
+    ui->lineEdit_roll->setText(QString::number(camera_roll));
+    ui->lineEdit_pitch->setText(QString::number(camera_pitch));
+    ui->lineEdit_yaw->setText(QString::number(camera_yaw));
 }
 
 void MainWindow::pubTFCalib()
@@ -94,174 +85,75 @@ void MainWindow::pubTFCalib()
     tf.update();
 }
 
-void MainWindow::update_tf()
+void MainWindow::update_tf(vector<double> camera_param)
 {
+    camera_x = camera_param.at(0);
+    camera_y = camera_param.at(1);
+    camera_z = camera_param.at(2);
+    camera_roll = camera_param.at(3);
+    camera_pitch = camera_param.at(4);
+    camera_yaw = camera_param.at(5);
+    initGui();
     pubTFCalib();
 }
 
-QImage MainWindow::IplImage2QImage(const IplImage *iplImage)
+void MainWindow::on_actionCalibration_triggered()
 {
-    int height = iplImage->height;
-    int width = iplImage->width;
-
-    if  (iplImage->depth == IPL_DEPTH_8U && iplImage->nChannels == 3)
-    {
-        const uchar *qImageBuffer = (const uchar*)iplImage->imageData;
-        QImage img(qImageBuffer, width, height, QImage::Format_RGB888);
-        return img.rgbSwapped();
-    } else if  (iplImage->depth == IPL_DEPTH_8U && iplImage->nChannels == 1){
-        const uchar *qImageBuffer = (const uchar*)iplImage->imageData;
-        QImage img(qImageBuffer, width, height, QImage::Format_Indexed8);
-
-        QVector<QRgb> colorTable;
-        for (int i = 0; i < 256; i++){
-            colorTable.push_back(qRgb(i, i, i));
-        }
-        img.setColorTable(colorTable);
-        return img;
-    }else{
-        qDebug("Image cannot be converted.");
-        return QImage();
-    }
-}
-
-void MainWindow::initStereoAuto()
-{
-    calibration->start();
-    connect(calibration, SIGNAL(emitIRImage(IplImage*)), this, SLOT(updateIR(IplImage*)));
-    connect(calibration, SIGNAL(emitTF(CvMat*,CvMat*)), this, SLOT(updateTF(CvMat*, CvMat*)));
-
-}
-
-void MainWindow::terminateStereoAuto()
-{
-    disconnect(calibration, SIGNAL(emitIRImage(IplImage*)), this, SLOT(updateIR1(IplImage*)));
-    calibration->quit();
-}
-
-void MainWindow::updateIR(IplImage *_irImage)
-{
-    irImage = _irImage;
-    if(irImage->imageSize != 0)
-        ui->label_ir->setPixmap(QPixmap::fromImage(IplImage2QImage(irImage)));
-}
-
-void MainWindow::updateTF(CvMat* rotMat, CvMat* transMat)
-{
-    camera_x = CV_MAT_ELEM(*transMat, float, 0, 0);
-    camera_y = CV_MAT_ELEM(*transMat, float, 1, 0);
-    camera_z = CV_MAT_ELEM(*transMat, float, 2, 0);
-
-    double m00 = CV_MAT_ELEM(*rotMat, float, 0, 0);
-    double m01 = CV_MAT_ELEM(*rotMat, float, 0, 1);
-    double m02 = CV_MAT_ELEM(*rotMat, float, 0, 2);
-    double m10 = CV_MAT_ELEM(*rotMat, float, 1, 0);
-    double m11 = CV_MAT_ELEM(*rotMat, float, 1, 1);
-    double m12 = CV_MAT_ELEM(*rotMat, float, 1, 2);
-    double m20 = CV_MAT_ELEM(*rotMat, float, 2, 0);
-    double m21 = CV_MAT_ELEM(*rotMat, float, 2, 1);
-    double m22 = CV_MAT_ELEM(*rotMat, float, 2, 2);
-
-    float tr = m00 + m11 + m22;
-    if (tr > 0)
-    {
-        float S = sqrt(tr+1.0) * 2; // S=4*qw
-        camera_qw = 0.25 * S;
-        camera_qx = (m21 - m12) / S;
-        camera_qy = (m02 - m20) / S;
-        camera_qz = (m10 - m01) / S; }
-    else if ((m00 > m11)&(m00 > m22)) {
-        float S = sqrt(1.0 + m00 - m11 - m22) * 2; // S=4*qx
-        camera_qw = (m21 - m12) / S;
-        camera_qx = 0.25 * S;
-        camera_qy = (m01 + m10) / S;
-        camera_qz = (m02 + m20) / S; }
-    else if (m11 > m22) {
-        float S = sqrt(1.0 + m11 - m00 - m22) * 2; // S=4*qy
-        camera_qw = (m02 - m20) / S;
-        camera_qx = (m01 + m10) / S;
-        camera_qy = 0.25 * S;
-        camera_qz = (m12 + m21) / S;
-    }
-    else {
-        float S = sqrt(1.0 + m22 - m00 - m11) * 2; // S=4*qz
-        camera_qw = (m10 - m01) / S;
-        camera_qx = (m02 + m20) / S;
-        camera_qy = (m12 + m21) / S;
-        camera_qz = 0.25 * S;
-    }
-
-    double q0,q1,q2,q3;
-    q0 = camera_qw;
-    q1 = camera_qx;
-    q2 = camera_qy;
-    q3 = camera_qz;
-
-    camera_roll = atan2(2*(q0*q1+q2*q3), 1-2*(q1*q1+q2*q2))/pi*180;
-    camera_pitch = asin(2*(q0*q2-q3*q1))/pi*180;
-    camera_yaw = atan2(2*(q0*q3+q1*q2), 1-2*(q2*q2+q3*q3))/pi*180;
-
-    initGui();
-    update_tf();
-
-}
-
-void MainWindow::on_horizontalSlider_camera_x_valueChanged(int value)
-{
-    camera_x = (double)value/1000;
-    ui->doubleSpinBox_camera_x->setValue(camera_x);
-    update_tf();
-}
-
-void MainWindow::on_horizontalSlider_camera_y_valueChanged(int value)
-{
-    camera_y = (double)value/1000;
-    ui->doubleSpinBox_camera_y->setValue(camera_y);
-    update_tf();
-}
-
-void MainWindow::on_horizontalSlider_camera_z_valueChanged(int value)
-{
-    camera_z = (double)value/1000;
-    ui->doubleSpinBox_camera_z->setValue(camera_z);
-    update_tf();
-}
-
-void MainWindow::on_horizontalSlider_camera_yaw_valueChanged(int value)
-{
-    camera_yaw = (double)value/100;
-    ui->doubleSpinBox_camera_yaw->setValue(camera_yaw);
-    update_tf();
-}
-
-void MainWindow::on_horizontalSlider_camera_pitch_valueChanged(int value)
-{
-    camera_pitch = (double)value/100;
-    ui->doubleSpinBox_camera_pitch->setValue(camera_pitch);
-    update_tf();
-}
-
-void MainWindow::on_horizontalSlider_camera_roll_valueChanged(int value)
-{
-    camera_roll = (double)value/100;
-    ui->doubleSpinBox_camera_roll->setValue(camera_roll);
-    update_tf();
-}
-
-
-void MainWindow::on_actionStereo_Auto_triggered(bool checked)
-{
-    if(checked){
-        ui->tabWidget->setCurrentIndex(1);
-        initStereoAuto();
+    if(ui->actionCalibration->isChecked()){
+        digCali = new DialogCalibration(this, image);
+        connect(digCali, SIGNAL(emitTF(vector<double>)), this, SLOT(update_tf(vector<double>)));
+        digCali->camera_x = camera_x;
+        digCali->camera_y = camera_y;
+        digCali->camera_z = camera_z;
+        digCali->camera_roll = camera_roll;
+        digCali->camera_pitch = camera_pitch;
+        digCali->camera_yaw = camera_yaw;
+        digCali->initGui();
+        digCali->show();
     }
     else{
-        terminateStereoAuto();
+        digCali->terminateAuto();
+        digCali->close();
     }
 }
+#include <QDebug>
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_actionSave_triggered()
 {
-    calibration->startCalibration();
+    QFile file(path + "/" + fileName);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return;
+
+    QTextStream out(&file);
+    out << "/dhri/calibrationOneKinect/x: " << camera_x << "\n";
+    out << "/dhri/calibrationOneKinect/y: " << camera_y << "\n";
+    out << "/dhri/calibrationOneKinect/z: " << camera_z << "\n";
+    out << "/dhri/calibrationOneKinect/yaw: " << camera_yaw << "\n";
+    out << "/dhri/calibrationOneKinect/pitch: " << camera_pitch << "\n";
+    out << "/dhri/calibrationOneKinect/roll: " << camera_roll ;
+    file.close();
+
+    qDebug() << "The current parameters are saved to the default file : "<< path + "/" + fileName;
+
 }
 
+void MainWindow::on_actionSaveAs_triggered()
+{
+    QString filePath = QFileDialog::getSaveFileName(this,
+                                                    tr("Save camera parameters as"), path, tr("yaml Files (*.yaml)"));
+
+    QFile file(filePath);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return;
+
+    QTextStream out(&file);
+    out << "/dhri/calibrationOneKinect/x: " << camera_x << "\n";
+    out << "/dhri/calibrationOneKinect/y: " << camera_y << "\n";
+    out << "/dhri/calibrationOneKinect/z: " << camera_z << "\n";
+    out << "/dhri/calibrationOneKinect/yaw: " << camera_yaw << "\n";
+    out << "/dhri/calibrationOneKinect/pitch: " << camera_pitch << "\n";
+    out << "/dhri/calibrationOneKinect/roll: " << camera_roll ;
+    file.close();
+
+    qDebug() << "The current parameters are saved to the default file : "<< filePath;
+}
