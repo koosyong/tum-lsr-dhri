@@ -1,0 +1,15 @@
+<package>
+  <description brief="dhri_calibrationTwoCam">
+
+     dhri_calibrationTwoCam
+
+  </description>
+  <author>dhri-karl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dhri_calibrationTwoCam</url>
+  <depend package="roscpp"/>
+
+</package>
+
+

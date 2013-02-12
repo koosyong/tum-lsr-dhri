@@ -1,0 +1,57 @@
+<launch>
+  <arg name="rgb_camera_info_url"   value="" />
+  <arg name="depth_camera_info_url" value="" />
+  <arg name="depth_registration" value="true" />
+  <arg name="rgb"              value="rgb" />
+  <arg name="ir"               value="ir" />
+  <arg name="depth"            value="depth" />
+  <arg name="depth_registered" value="depth_registered" />
+  <arg name="projector"        value="projector" />
+  <arg name="load_driver" value="true" />
+  <arg name="publish_tf" value="true" />
+  <arg name="bond" value="false" />
+  <arg name="respawn" value="$(arg bond)" />
+  <arg name="debug" value="false" />
+  <arg name="camera" default="param_camera.yaml" />
+  <arg name="checkboard" default="param_checkboard.yaml" />
+  <arg name="gui" default="on" />
+
+  <include file="$(find openni_launch)/launch/includes/manager.launch">
+    <arg name="name" value="camera_nodelet_manager" />
+    <arg name="debug" value="$(arg debug)" />
+  </include>
+
+  <group ns="camera">
+    <include if="$(arg load_driver)"
+	     file="$(find openni_launch)/launch/includes/device.launch">
+      <arg name="manager"               value="/camera_nodelet_manager" /> 
+      <arg name="device_id"             value="#1" />
+      <arg name="rgb_frame_id"          value="/camera_rgb_frame" />
+      <arg name="depth_frame_id"        value="/camera_depth_frame" />
+      <arg name="rgb_camera_info_url"   value="$(arg rgb_camera_info_url)" />
+      <arg name="depth_camera_info_url" value="$(arg depth_camera_info_url)" />
+      <arg name="depth_registration"    value="$(arg depth_registration)" />
+      <arg name="rgb"                   value="$(arg rgb)" />
+      <arg name="ir"                    value="$(arg ir)" />
+      <arg name="depth"                 value="$(arg depth)" />
+      <arg name="depth_registered"      value="$(arg depth_registered)" />
+      <arg name="projector"             value="$(arg projector)" />
+      <arg name="respawn"               value="$(arg respawn)" />
+    </include>
+
+    <include file="$(find openni_launch)/launch/includes/processing.launch">
+      <arg name="manager"               value="/camera_nodelet_manager" />
+      <arg name="rgb"                   value="$(arg rgb)" />
+      <arg name="ir"                    value="$(arg ir)" />
+      <arg name="depth"                 value="$(arg depth)" />
+      <arg name="depth_registered"      value="$(arg depth_registered)" />
+      <arg name="projector"             value="$(arg projector)" />
+      <arg name="respawn"               value="$(arg respawn)" />
+    </include>
+  </group>
+
+  <rosparam command="load" file="$(find dhri_calibrationOneCam)/$(arg camera)" />
+  <rosparam command="load" file="$(find dhri_calibrationOneCam)/$(arg checkboard)" />
+  <node name="dhri_calibrationOneCam" pkg="dhri_calibrationOneCam" type="calibrationOneCam" args="$(find dhri_calibrationOneCam) $(arg camera) $(arg gui)" />
+
+</launch>

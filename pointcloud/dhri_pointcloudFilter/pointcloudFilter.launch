@@ -1,0 +1,8 @@
+<launch>
+  <arg name="param" default="param.yaml" />
+  <arg name="gui" default="on" />
+
+  <rosparam command="load" file="$(find dhri_pointcloudFilter)/$(arg param)" />
+  <node name="dhri_pointcloudFilter" pkg="dhri_pointcloudFilter" type="pointcloudFilter" args="$(find dhri_pointcloudFilter) $(arg param) $(arg gui)" />
+
+</launch>

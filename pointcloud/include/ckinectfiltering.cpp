@@ -27,9 +27,6 @@ CKinectFiltering::CKinectFiltering()
     paramValue_segmentation_minSize = 20;
     paramValue_segmentation_maxSize = 25000000;
        init();
-
-
-
 }
 
 
