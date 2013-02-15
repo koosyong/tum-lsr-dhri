@@ -1,0 +1,12 @@
+#include <ros/ros.h>
+#include <ckinectfiltering.h>
+
+int main (int argc, char** argv)
+{
+    // Initialize ROS
+
+    CKinectFiltering filtering;
+    filtering.on_init();
+
+}
+

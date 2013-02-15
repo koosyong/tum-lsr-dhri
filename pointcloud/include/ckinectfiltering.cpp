@@ -4,29 +4,29 @@ CKinectFiltering::CKinectFiltering()
     :CKinect<PointT>::CKinect("/ckinect/filtering/subTopic", "/ckinect/filtering/pubTopic", "/camera/depth_registered/points", "/ckinect/pcloud/filtered")
 {
     CKinect<PointT>::parent = this;
-    paramValue_pubTopic_segmentedRGB = "/ckinect/pcloud/segmentedRGB";
-    paramValue_pubTopic_segmentedID = "/ckinect/pcloud/segmentedID";
-    paramValue_pubTopic_workspace = "/ckinect/workspace";
+//    paramValue_pubTopic_segmentedRGB = "/ckinect/pcloud/segmentedRGB";
+//    paramValue_pubTopic_segmentedID = "/ckinect/pcloud/segmentedID";
+//    paramValue_pubTopic_workspace = "/ckinect/workspace";
 
-    paramValue_workspace_on = 0;
-    paramValue_workspace_x = 0.;
-    paramValue_workspace_y = 0.;
-    paramValue_workspace_z = 0.;
-    paramValue_workspace_height = 0.5;
-    paramValue_workspace_zheight = 0.5;
-    paramValue_workspace_width = 0.5;
+//    paramValue_workspace_on = 0;
+//    paramValue_workspace_x = 0.;
+//    paramValue_workspace_y = 0.;
+//    paramValue_workspace_z = 0.;
+//    paramValue_workspace_height = 0.5;
+//    paramValue_workspace_zheight = 0.5;
+//    paramValue_workspace_width = 0.5;
 
-    paramValue_downsampling_on = 0;
-    paramValue_downsampling_leaf = 0.02;
+//    paramValue_downsampling_on = 0;
+//    paramValue_downsampling_leaf = 0.02;
 
-    paramValue_planeExtraction_on = 0;
-    paramValue_planeExtraction_numPlane = 1;
+//    paramValue_planeExtraction_on = 0;
+//    paramValue_planeExtraction_numPlane = 1;
 
-    paramValue_segmentation_on = 0;
-    paramValue_segmentation_tolerance = 0.02;
-    paramValue_segmentation_minSize = 20;
-    paramValue_segmentation_maxSize = 25000000;
-       init();
+//    paramValue_segmentation_on = 0;
+//    paramValue_segmentation_tolerance = 0.02;
+//    paramValue_segmentation_minSize = 20;
+//    paramValue_segmentation_maxSize = 25000000;
+      init();
 }
 
 

@@ -1,7 +1,8 @@
-/dhri/pointcloudFilter/sub1/topic: '/camera/depth_registered/points'
-/dhri/pointcloudFilter/sub1/frame: '/origin'
-/dhri/pointcloudFilter/sub2/topic:
-/dhri/pointcloudFilter/sub2/frame:
+/dhri/pointcloudFilter/sub/num: 2
+/dhri/pointcloudFilter/sub/topic1: '/camera/depth_registered/points'
+/dhri/pointcloudFilter/sub/frame1: '/origin'
+/dhri/pointcloudFilter/sub/topic2: '/camera/depth_registered/points'
+/dhri/pointcloudFilter/sub/frame2: '/origin'
 /dhri/pointcloudFilter/pub/topic: '/dhri/points/filtered'
 /dhri/pointcloudFilter/pub/frame: '/origin'
 /dhri/pointcloudFilter/workspace/on: 1
@@ -21,3 +22,4 @@
 /dhri/pointcloudFilter/segmentation/maxSize: 25000
 /dhri/pointcloudFilter/segmentation/topicRGB: '/dhri/points/segmentedRGB'
 /dhri/pointcloudFilter/segmentation/topicID: '/dhri/points/segmentedID'
+

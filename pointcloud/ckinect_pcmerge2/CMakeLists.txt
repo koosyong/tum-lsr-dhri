@@ -33,7 +33,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #############################################
 #############################################
 
-set(INCLUDE $ENV{COTESYS_KINECT_DIR}/include)
+set(INCLUDE $ENV{TUM_LSR_DHRI}/pointcloud/include)
 
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}

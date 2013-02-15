@@ -41,16 +41,42 @@ include_directories(
 
 set( sources
     src/pointcloudFilter.cpp
-    ${INCLUDE}/ckinect.hpp
     ${INCLUDE}/ckinectfiltering.cpp
     ${INCLUDE}/pcfilter/pcfilter.hpp
+    ${INCLUDE}/ckinectpcreceiver.hpp
+    ${INCLUDE}/qnode.cpp
  )
 
 set( headers
-    ${INCLUDE}/ckinect.h
     ${INCLUDE}/ckinectfiltering.h
     ${INCLUDE}/pcfilter/pcfilter.h
+    ${INCLUDE}/ckinectpcreceiver.h
+    ${INCLUDE}/qnode.hpp
 )
 
-rosbuild_add_executable(pointcloudFilter ${sources} ${headers})
-#target_link_libraries(ckinect_filtering)
+#############################################
+# Required 3rd party
+
+#############################################
+# http://qtnode.net/wiki/Qt4_with_cmake
+
+find_package(Qt4)
+set(QT_USE_QTOPENGL TRUE)
+include(${QT_USE_FILE})
+
+file(GLOB QT_FORMS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} src/*.ui)
+file(GLOB QT_RESOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} resources/*.qrc)
+file(GLOB_RECURSE QT_MOC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} FOLLOW_SYMLINKS include/local/*.hpp)
+
+QT4_ADD_RESOURCES(QT_RESOURCES_CPP ${QT_RESOURCES})
+QT4_WRAP_UI(QT_FORMS_HPP ${QT_FORMS})
+QT4_WRAP_CPP(QT_MOC_HPP ${QT_MOC})
+qt4_wrap_cpp(moc_sources ${headers})
+
+file(GLOB_RECURSE QT_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} FOLLOW_SYMLINK src/*.*)
+
+#############################################
+#############################################
+
+rosbuild_add_executable(pointcloudFilter ${sources} ${headers} ${QT_SOURCES} ${QT_RESOURCES_CPP} ${QT_FORMS_HPP} ${QT_MOC_HPP} ${moc_sources})
+target_link_libraries(pointcloudFilter QtGui)

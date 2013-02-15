@@ -1,25 +1,34 @@
 #ifndef CKINECTFILTERING_H
 #define CKINECTFILTERING_H
 
-#include <ckinect.h>
+#include "ckinectpcreceiver.h"
 #include <pcfilter.h>
 #include <nav_msgs/GridCells.h>
 
-typedef pcl::PointXYZRGB PointT;
+using namespace std;
 
-class CKinectFiltering : public CKinect<PointT>
+typedef pcl::PointXYZRGB PointT;
+typedef CKinectPCReceiver<PointT> PCReceiver;
+
+class CKinectFiltering : public QNode
 {
 public:
+    typedef pcl::PointCloud<PointT> Cloud;
+    typedef Cloud::Ptr CloudPtr;
+    typedef Cloud::ConstPtr CloudConstPtr;
+
     typedef pcl::PointXYZI PointID;
     typedef pcl::PointCloud<PointID> CloudID;
     typedef CloudID::Ptr CloudPtrID;
-    typedef CloudID::ConstPtr CloudConstPtrID;
+    typedef CloudID::ConstPtr CloudConstPtrID;       
 
 public:
     CKinectFiltering();
     void run();
+    void ros_comms_init();
 
 private:
+    vector<PCReceiver*> pcReceivers;
     PCFilter<PointT> filter;
 
     ros::Publisher pub_filtered;
@@ -27,6 +36,9 @@ private:
     ros::Publisher pub_segmentedID;
     ros::Publisher pub_grid;    
     nav_msgs::GridCells workspace;
+    QMutex mutex;
+    sensor_msgs::PointCloud2 output;
+    tf::TransformListener *tf_listener;
 
     // param
     string paramValue_pubTopic_segmentedRGB;
