@@ -6,45 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/__/include/../../../include/qnode.hpp
-ros/ros.h
--
-string
--
-QThread
--
-QStringListModel
--
-
-/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/__/include/moc_ckinectfiltering.cxx
-
-/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/__/include/moc_ckinectpcreceiver.cxx
-
-/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/__/include/moc_qnode.cxx
-../../../include/qnode.hpp
-/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/__/include/../../../include/qnode.hpp
-
-/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/__/include/pcfilter/moc_pcfilter.cxx
-
-/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/src/pointcloudFilter.cpp
-ros/ros.h
--
+/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectfiltering.cpp
 ckinectfiltering.h
--
+/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectfiltering.h
 
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectfiltering.cpp
-ckinectfiltering.h
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectfiltering.h
-
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectfiltering.h
+/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectfiltering.h
 ckinectpcreceiver.h
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
+/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
 pcfilter.h
 -
 nav_msgs/GridCells.h
 -
 
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
+/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
 ros/ros.h
 -
 sensor_msgs/PointCloud2.h
@@ -66,15 +40,15 @@ QMutex
 string
 -
 qnode.hpp
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.hpp
+/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.hpp
 ckinectpcreceiver.hpp
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.hpp
+/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.hpp
 
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.hpp
+/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.hpp
 ckinectpcreceiver.h
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
+/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
 
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.h
+/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.h
 pcl/filters/extract_indices.h
 -
 pcl/filters/voxel_grid.h
@@ -102,29 +76,15 @@ pcl/filters/passthrough.h
 vector
 -
 pcfilter.hpp
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.hpp
+/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.hpp
 
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.hpp
+/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.hpp
 pcfilter.h
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.h
+/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.h
 Eigen/Dense
 -
 
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.cpp
-ros/ros.h
--
-ros/network.h
--
-string
--
-qnode.hpp
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.hpp
-std_msgs/String.h
--
-sstream
--
-
-/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.hpp
+/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.hpp
 ros/ros.h
 -
 string
@@ -1764,12 +1724,6 @@ forwards.h
 common.h
 /opt/ros/fuerte/include/ros/common.h
 
-/opt/ros/fuerte/include/ros/network.h
-forwards.h
-/opt/ros/fuerte/include/ros/forwards.h
-common.h
-/opt/ros/fuerte/include/ros/common.h
-
 /opt/ros/fuerte/include/ros/node_handle.h
 ros/forwards.h
 /opt/ros/fuerte/include/ros/ros/forwards.h
@@ -2269,22 +2223,6 @@ ros/message_operations.h
 -
 
 /opt/ros/fuerte/include/std_msgs/Header.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
-/opt/ros/fuerte/include/std_msgs/String.h
 string
 -
 vector

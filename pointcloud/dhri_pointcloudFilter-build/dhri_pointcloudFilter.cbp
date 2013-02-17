@@ -8,68 +8,68 @@
       <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\fuerte\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\ros\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\ros\core\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\ros\core\rosbuild\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\roslang\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\roslang\cmake\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\roslisp\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\roslisp\rosbuild\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\rospy\rosbuild\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\fuerte\share\roscpp\rosbuild\;" />
       <Build>
       <Target title="all">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="ROSBUILD_genmsg_cpp">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 ROSBUILD_genmsg_cpp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 ROSBUILD_genmsg_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="ROSBUILD_genmsg_lisp">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 ROSBUILD_genmsg_lisp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 ROSBUILD_genmsg_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="ROSBUILD_gensrv_cpp">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 ROSBUILD_gensrv_cpp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 ROSBUILD_gensrv_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="ROSBUILD_gensrv_lisp">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 ROSBUILD_gensrv_lisp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 ROSBUILD_gensrv_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="clean-test-results">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean-test-results" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean-test-results" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="pointcloudFilter">
-         <Option output="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/bin/pointcloudFilter" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/bin" />
+         <Option output="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/bin/pointcloudFilter" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/bin" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -77,9 +77,9 @@
             <Add option="-DQT_OPENGL_LIB" />
             <Add option="-DQT_GUI_LIB" />
             <Add option="-DQT_CORE_LIB" />
-            <Add directory="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/include" />
-            <Add directory="/home/dhri-karl/tum-lsr-dhri/pointcloud/include" />
-            <Add directory="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter" />
+            <Add directory="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/include" />
+            <Add directory="/home/koosy/tum-lsr-dhri/pointcloud/include" />
+            <Add directory="/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter" />
             <Add directory="/opt/ros/fuerte/include" />
             <Add directory="/opt/ros/fuerte/include/pcl-1.5" />
             <Add directory="/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include" />
@@ -117,15 +117,15 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 pointcloudFilter" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 pointcloudFilter" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="pointcloudFilter/fast">
-         <Option output="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/bin/pointcloudFilter" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/bin" />
+         <Option output="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/bin/pointcloudFilter" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/bin" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -133,9 +133,9 @@
             <Add option="-DQT_OPENGL_LIB" />
             <Add option="-DQT_GUI_LIB" />
             <Add option="-DQT_CORE_LIB" />
-            <Add directory="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/include" />
-            <Add directory="/home/dhri-karl/tum-lsr-dhri/pointcloud/include" />
-            <Add directory="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter" />
+            <Add directory="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/include" />
+            <Add directory="/home/koosy/tum-lsr-dhri/pointcloud/include" />
+            <Add directory="/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter" />
             <Add directory="/opt/ros/fuerte/include" />
             <Add directory="/opt/ros/fuerte/include/pcl-1.5" />
             <Add directory="/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include" />
@@ -173,169 +173,171 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 pointcloudFilter/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 pointcloudFilter/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rebuild_cache">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rosbuild_precompile">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rosbuild_precompile" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rosbuild_precompile" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rosbuild_premsgsrvgen">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rosbuild_premsgsrvgen" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rosbuild_premsgsrvgen" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rospack_genmsg">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rospack_genmsg" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rospack_genmsg" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rospack_genmsg_libexe">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rospack_genmsg_libexe" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rospack_genmsg_libexe" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rospack_gensrv">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rospack_gensrv" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 rospack_gensrv" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="test">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 test" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 test" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="test-future">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 test-future" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 test-future" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="test-results">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 test-results" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 test-results" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="test-results-run">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 test-results-run" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 test-results-run" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="tests">
-         <Option working_dir="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
+         <Option working_dir="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 tests" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 tests" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter-build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       </Build>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/src/pointcloudFilter.cpp">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/src/pointcloudFilter.cpp">
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectfiltering.cpp">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectfiltering.cpp">
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.cpp">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.cpp">
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectfiltering.h">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/src/pointcloudFilter.cpp.autosave">
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectfiltering.h">
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.hpp">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h">
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.h">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.hpp">
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.hpp">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.h">
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.hpp">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter/pcfilter.hpp">
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/CMakeLists.txt">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.hpp">
+      </Unit>
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/rosbuild.cmake">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/rosbuild.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\fuerte\share\ros\core\rosbuild\" />
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/private.cmake">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/private.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\fuerte\share\ros\core\rosbuild\" />
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/public.cmake">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/public.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\fuerte\share\ros\core\rosbuild\" />
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/ProcessorCount.cmake">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/ProcessorCount.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\fuerte\share\ros\core\rosbuild\" />
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/rosconfig.cmake">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/ros/core/rosbuild/rosconfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\fuerte\share\ros\core\rosbuild\" />
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/roslang/cmake/roslang.cmake">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/roslang/cmake/roslang.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\fuerte\share\roslang\cmake\" />
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/roslisp/rosbuild/roslisp.cmake">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/roslisp/rosbuild/roslisp.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\fuerte\share\roslisp\rosbuild\" />
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/rospy/rosbuild/rospy.cmake">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/rospy/rosbuild/rospy.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\fuerte\share\rospy\rosbuild\" />
       </Unit>
-      <Unit filename="/home/dhri-karl/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/roscpp/rosbuild/roscpp.cmake">
+      <Unit filename="/home/koosy/tum-lsr-dhri/pointcloud/dhri_pointcloudFilter/../../../../../opt/ros/fuerte/share/roscpp/rosbuild/roscpp.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\fuerte\share\roscpp\rosbuild\" />
       </Unit>
    </Project>

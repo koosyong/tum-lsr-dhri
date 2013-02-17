@@ -40,30 +40,40 @@ private:
     sensor_msgs::PointCloud2 output;
     tf::TransformListener *tf_listener;
 
-    // param
-    string paramValue_pubTopic_segmentedRGB;
-    string paramValue_pubTopic_segmentedID;
-    string paramValue_pubTopic_workspace;
+    // param   
+    bool isParam;
+    int param_sub_num;
+    vector<string> param_sub_topics;
+    vector<string> param_sub_frames;
+    string param_pub_topic;
+    string param_pub_frame;
 
-    bool paramValue_workspace_on;
-    double paramValue_workspace_x;
-    double paramValue_workspace_y;
-    double paramValue_workspace_z;
-    double paramValue_workspace_height;
-    double paramValue_workspace_width;
-    double paramValue_workspace_zheight;
-    bool paramValue_downsampling_on;
-    double paramValue_downsampling_leaf;
-    bool paramValue_planeExtraction_on;
-    int paramValue_planeExtraction_numPlane;
-    bool paramValue_segmentation_on;
-    double paramValue_segmentation_tolerance;
-    double paramValue_segmentation_minSize;
-    double paramValue_segmentation_maxSize;
+    bool param_workspace_on;
+    double param_workspace_x;
+    double param_workspace_y;
+    double param_workspace_z;
+    double param_workspace_width;
+    double param_workspace_height;
+    double param_workspace_zheight;
+    string param_workspace_topic;
 
-protected:
-    void init();
+    bool param_downsampling_on;
+    double param_downsampling_leaf;
+
+    bool param_planeExtraction_on;
+    int param_planeExtraction_numPlane;
+
+    bool param_segmentation_on;
+    double param_segmentation_tolerance;
+    double param_segmentation_minSize;
+    double param_segmentation_maxSize;
+    string param_segmentation_topicRGB;
+    string param_segmentation_topicID;
+
+private:
+    void readParam();
     void processing();
+    void infoDisplay();
 };
 
 #endif // CKINECTFILTERING_H

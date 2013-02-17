@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2
+CMAKE_SOURCE_DIR = /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build
+CMAKE_BINARY_DIR = /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build
 
 # Utility rule file for test.
 
@@ -57,6 +57,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	cd /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2 /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2 /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2 /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2 /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test.dir/depend
 

@@ -11,6 +11,7 @@
 /dhri/pointcloudFilter/workspace/z: 0.
 /dhri/pointcloudFilter/workspace/width: 0.7
 /dhri/pointcloudFilter/workspace/height: 0.35
+/dhri/pointcloudFilter/workspace/zheight: 0.35
 /dhri/pointcloudFilter/workspace/topic: '/dhri/workspace'
 /dhri/pointcloudFilter/downsampling/on: 0
 /dhri/pointcloudFilter/downsampling/leaf: 0.01

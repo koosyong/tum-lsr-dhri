@@ -1,9 +1,9 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o"
   "CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o"
-  "CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o"
-  "CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o"
-  "CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o"
+  "CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o"
+  "CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o"
+  "CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o"
   "ui_mainwindow.h"
   "CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o"
   "CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o"
@@ -15,8 +15,8 @@ FILE(REMOVE_RECURSE
   "__/include/moc_ckinectpcreceiver.cxx"
   "__/include/moc_ckinectthread.cxx"
   "__/include/moc_qnode.cxx"
-  "/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2.pdb"
-  "/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2"
+  "/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2.pdb"
+  "/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2"
 )
 
 # Per-language clean rules from dependency scanning.

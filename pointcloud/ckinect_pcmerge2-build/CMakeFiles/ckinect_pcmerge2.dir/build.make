@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2
+CMAKE_SOURCE_DIR = /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build
+CMAKE_BINARY_DIR = /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ckinect_pcmerge2.dir/depend.make
@@ -47,8 +47,8 @@ include CMakeFiles/ckinect_pcmerge2.dir/progress.make
 include CMakeFiles/ckinect_pcmerge2.dir/flags.make
 
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
-CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/ckinect_pcmerge2.cpp
-CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/manifest.xml
+CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/ckinect_pcmerge2.cpp
+CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/manifest.xml
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /opt/ros/fuerte/share/roslang/manifest.xml
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /opt/ros/fuerte/share/roscpp/manifest.xml
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
@@ -84,17 +84,17 @@ CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /opt/ros/fuerte/stacks/b
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/ckinect_pcmerge2.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o -c /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/ckinect_pcmerge2.cpp
 
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/ckinect_pcmerge2.cpp > CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/ckinect_pcmerge2.cpp > CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.i
 
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/ckinect_pcmerge2.cpp -o CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/ckinect_pcmerge2.cpp -o CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.s
 
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o.requires:
 .PHONY : CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o.requires
@@ -106,8 +106,8 @@ CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o.provides: CMakeFiles/ckin
 CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o.provides.build: CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o
 
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
-CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.cpp
-CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/manifest.xml
+CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.cpp
+CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/manifest.xml
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /opt/ros/fuerte/share/roslang/manifest.xml
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /opt/ros/fuerte/share/roscpp/manifest.xml
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
@@ -143,17 +143,17 @@ CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /opt/ros/fuerte/stacks/bond_co
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o -c /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.cpp
 
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.cpp > CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.cpp > CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.i
 
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.cpp -o CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.cpp -o CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.s
 
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o.requires:
 .PHONY : CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o.requires
@@ -164,93 +164,93 @@ CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o.provides: CMakeFiles/ckinect_pc
 
 CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o.provides.build: CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.cpp
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o: /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o -c /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.cpp
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.cpp > CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.i
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.cpp > CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.i
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.cpp -o CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.s
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.cpp -o CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.s
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.requires:
-.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.requires
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.requires:
+.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.requires
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.provides: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.requires
-	$(MAKE) -f CMakeFiles/ckinect_pcmerge2.dir/build.make CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.provides.build
-.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.provides
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.provides: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.requires
+	$(MAKE) -f CMakeFiles/ckinect_pcmerge2.dir/build.make CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.provides.build
+.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.provides
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.provides.build: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.provides.build: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o: /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o -c /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp > CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.i
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp > CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.i
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp -o CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.s
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.cpp -o CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.s
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o.requires:
-.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o.requires
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o.requires:
+.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o.requires
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o.provides: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o.requires
-	$(MAKE) -f CMakeFiles/ckinect_pcmerge2.dir/build.make CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o.provides.build
-.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o.provides
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o.provides: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o.requires
+	$(MAKE) -f CMakeFiles/ckinect_pcmerge2.dir/build.make CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o.provides.build
+.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o.provides
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o.provides.build: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o.provides.build: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.cpp
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o: /home/koosy/tum-lsr-dhri/pointcloud/include/qnode.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o -c /home/koosy/tum-lsr-dhri/pointcloud/include/qnode.cpp
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.cpp > CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.i
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/include/qnode.cpp > CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.i
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.cpp -o CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.s
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/include/qnode.cpp -o CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.s
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o.requires:
-.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o.requires
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o.requires:
+.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o.requires
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o.provides: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o.requires
-	$(MAKE) -f CMakeFiles/ckinect_pcmerge2.dir/build.make CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o.provides.build
-.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o.provides
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o.provides: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o.requires
+	$(MAKE) -f CMakeFiles/ckinect_pcmerge2.dir/build.make CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o.provides.build
+.PHONY : CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o.provides
 
-CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o.provides.build: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o
+CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o.provides.build: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o
 
-ui_mainwindow.h: /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_6)
+ui_mainwindow.h: /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_mainwindow.h"
-	/usr/bin/uic-qt4 -o /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/ui_mainwindow.h /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.ui
+	/usr/bin/uic-qt4 -o /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/ui_mainwindow.h /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.ui
 
 CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
 CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o: src/moc_mainwindow.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/src/moc_mainwindow.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o -c /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/src/moc_mainwindow.cxx
 
 CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/src/moc_mainwindow.cxx > CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/src/moc_mainwindow.cxx > CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.i
 
 CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/src/moc_mainwindow.cxx -o CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/src/moc_mainwindow.cxx -o CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.s
 
 CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o.requires:
 .PHONY : CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o.requires
@@ -263,17 +263,17 @@ CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o.provides.build: CMakeFiles/
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o: __/include/moc_ckinectpcmerge.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcmerge.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o -c /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcmerge.cxx
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcmerge.cxx > CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcmerge.cxx > CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.i
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcmerge.cxx -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcmerge.cxx -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.s
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o.requires:
 .PHONY : CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o.requires
@@ -286,17 +286,17 @@ CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o.provides.build: 
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o: __/include/moc_ckinectpcreceiver.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcreceiver.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o -c /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcreceiver.cxx
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcreceiver.cxx > CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcreceiver.cxx > CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.i
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcreceiver.cxx -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcreceiver.cxx -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.s
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o.requires:
 .PHONY : CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o.requires
@@ -309,17 +309,17 @@ CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o.provides.buil
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o: __/include/moc_ckinectthread.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectthread.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o -c /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectthread.cxx
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectthread.cxx > CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectthread.cxx > CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.i
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectthread.cxx -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectthread.cxx -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.s
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o.requires:
 .PHONY : CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o.requires
@@ -332,17 +332,17 @@ CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o.provides.build: C
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o: CMakeFiles/ckinect_pcmerge2.dir/flags.make
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o: __/include/moc_qnode.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o -c /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_qnode.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o -c /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_qnode.cxx
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_qnode.cxx > CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_qnode.cxx > CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.i
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_qnode.cxx -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_qnode.cxx -o CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.s
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o.requires:
 .PHONY : CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o.requires
@@ -353,38 +353,38 @@ CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o.provides: CMakeFiles/ckin
 
 CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o.provides.build: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o
 
-src/moc_mainwindow.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_12)
+src/moc_mainwindow.cxx: /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_mainwindow.cxx"
-	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/src/moc_mainwindow.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.h
+	/usr/bin/moc-qt4 -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/koosy/tum-lsr-dhri/pointcloud/include -I/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/src/moc_mainwindow.cxx /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/src/mainwindow.h
 
-__/include/moc_ckinectpcmerge.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_13)
+__/include/moc_ckinectpcmerge.cxx: /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating __/include/moc_ckinectpcmerge.cxx"
-	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcmerge.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.h
+	/usr/bin/moc-qt4 -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/koosy/tum-lsr-dhri/pointcloud/include -I/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcmerge.cxx /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.h
 
-__/include/moc_ckinectpcreceiver.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_14)
+__/include/moc_ckinectpcreceiver.cxx: /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating __/include/moc_ckinectpcreceiver.cxx"
-	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcreceiver.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
+	/usr/bin/moc-qt4 -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/koosy/tum-lsr-dhri/pointcloud/include -I/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectpcreceiver.cxx /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcreceiver.h
 
-__/include/moc_ckinectthread.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_15)
+__/include/moc_ckinectthread.cxx: /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating __/include/moc_ckinectthread.cxx"
-	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectthread.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.h
+	/usr/bin/moc-qt4 -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/koosy/tum-lsr-dhri/pointcloud/include -I/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_ckinectthread.cxx /home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.h
 
-__/include/moc_qnode.cxx: /home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.hpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_16)
+__/include/moc_qnode.cxx: /home/koosy/tum-lsr-dhri/pointcloud/include/qnode.hpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating __/include/moc_qnode.cxx"
-	/usr/bin/moc-qt4 -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include -I/home/dhri-karl/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_qnode.cxx /home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.hpp
+	/usr/bin/moc-qt4 -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/include -I/opt/ros/fuerte/include -I/opt/ros/fuerte/stacks/geometry/tf/include -I/opt/ros/fuerte/stacks/geometry/tf/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/geometry/tf/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/bullet/include -I/opt/ros/fuerte/stacks/geometry/angles/include -I/usr/include/ni -I/opt/ros/fuerte/include/opencv -I/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include -I/opt/ros/fuerte/include/pcl-1.5 -I/usr/include/eigen3 -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/include -I/opt/ros/fuerte/stacks/perception_pcl/pcl_ros/cfg/cpp -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/cpp/include -I/opt/ros/fuerte/stacks/pluginlib/include -I/opt/ros/fuerte/stacks/pluginlib -I/opt/ros/fuerte/stacks/bond_core/bondcpp/include -I/opt/ros/fuerte/stacks/bond_core/bond/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/bond_core/smclib/include -I/opt/ros/fuerte/stacks/nodelet_core/nodelet_topic_tools/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv/cpp -I/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include -I/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include -I/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build -I/home/koosy/tum-lsr-dhri/pointcloud/include -I/home/koosy/tum-lsr-dhri/pointcloud/include/pcfilter -I/usr/include/qt4 -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -o /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/__/include/moc_qnode.cxx /home/koosy/tum-lsr-dhri/pointcloud/include/qnode.hpp
 
 # Object files for target ckinect_pcmerge2
 ckinect_pcmerge2_OBJECTS = \
 "CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o" \
 "CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o" \
-"CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o" \
-"CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o" \
-"CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o" \
+"CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o" \
+"CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o" \
+"CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o" \
 "CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o" \
 "CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o" \
 "CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o" \
@@ -394,30 +394,30 @@ ckinect_pcmerge2_OBJECTS = \
 # External object files for target ckinect_pcmerge2
 ckinect_pcmerge2_EXTERNAL_OBJECTS =
 
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/build.make
-/home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2"
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectthread.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_qnode.o
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/build.make
+/home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2: CMakeFiles/ckinect_pcmerge2.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ckinect_pcmerge2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/ckinect_pcmerge2.dir/build: /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2
+CMakeFiles/ckinect_pcmerge2.dir/build: /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2/bin/ckinect_pcmerge2
 .PHONY : CMakeFiles/ckinect_pcmerge2.dir/build
 
 CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/src/ckinect_pcmerge2.o.requires
 CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/src/mainwindow.o.requires
-CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.requires
-CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/ckinectthread.o.requires
-CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/home/dhri-karl/tum-lsr-dhri/pointcloud/include/qnode.o.requires
+CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectpcmerge.o.requires
+CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/ckinectthread.o.requires
+CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/home/koosy/tum-lsr-dhri/pointcloud/include/qnode.o.requires
 CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/src/moc_mainwindow.o.requires
 CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcmerge.o.requires
 CMakeFiles/ckinect_pcmerge2.dir/requires: CMakeFiles/ckinect_pcmerge2.dir/__/include/moc_ckinectpcreceiver.o.requires
@@ -435,6 +435,6 @@ CMakeFiles/ckinect_pcmerge2.dir/depend: __/include/moc_ckinectpcmerge.cxx
 CMakeFiles/ckinect_pcmerge2.dir/depend: __/include/moc_ckinectpcreceiver.cxx
 CMakeFiles/ckinect_pcmerge2.dir/depend: __/include/moc_ckinectthread.cxx
 CMakeFiles/ckinect_pcmerge2.dir/depend: __/include/moc_qnode.cxx
-	cd /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2 /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2 /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build /home/dhri-karl/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles/ckinect_pcmerge2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2 /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2 /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build /home/koosy/tum-lsr-dhri/pointcloud/ckinect_pcmerge2-build/CMakeFiles/ckinect_pcmerge2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ckinect_pcmerge2.dir/depend
 
