@@ -34,7 +34,8 @@ private:
     ros::Publisher pub_filtered;
     ros::Publisher pub_segmentedRGB;
     ros::Publisher pub_segmentedID;
-    ros::Publisher pub_grid;    
+    ros::Publisher pub_workspace;
+
     nav_msgs::GridCells workspace;
     QMutex mutex;
     sensor_msgs::PointCloud2 output;
@@ -48,7 +49,7 @@ private:
     string param_pub_topic;
     string param_pub_frame;
 
-    bool param_workspace_on;
+    int param_workspace_on;
     double param_workspace_x;
     double param_workspace_y;
     double param_workspace_z;
@@ -57,22 +58,23 @@ private:
     double param_workspace_zheight;
     string param_workspace_topic;
 
-    bool param_downsampling_on;
+    int param_downsampling_on;
     double param_downsampling_leaf;
 
-    bool param_planeExtraction_on;
+    int param_planeExtraction_on;
     int param_planeExtraction_numPlane;
 
-    bool param_segmentation_on;
+    int param_segmentation_on;
     double param_segmentation_tolerance;
     double param_segmentation_minSize;
     double param_segmentation_maxSize;
     string param_segmentation_topicRGB;
     string param_segmentation_topicID;
 
+    CloudPtr pCloudOut, pCloudSampled, pCloud_input, pCloud_output;
+
 private:
     void readParam();
-    void processing();
     void infoDisplay();
 };
 

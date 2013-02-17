@@ -19,90 +19,154 @@ void CKinectFiltering::ros_comms_init()
         else ROS_INFO("FAIL to open node : %s", name.toStdString().data());
     }
     // init pubs
-    /*
-
-    // Create a ROS subscriber for the input point cloud
-    if(paramValue_segmentation_on){
-        pub_segmentedRGB = nh.advertise<sensor_msgs::PointCloud2> (paramValue_pubTopic_segmentedRGB, 1);
-        pub_segmentedID = nh.advertise<sensor_msgs::PointCloud2> (paramValue_pubTopic_segmentedID, 1);
+    pub_filtered = n.advertise<sensor_msgs::PointCloud2> (param_pub_topic, 1000);
+    if(param_workspace_on == 1){
+        pub_workspace = n.advertise<nav_msgs::GridCells> (param_workspace_topic, 1000);
     }
-    if(paramValue_workspace_on)
-        pub_grid = nh.advertise<nav_msgs::GridCells> (paramValue_pubTopic_workspace,1);
-
-    workspace.cell_height = paramValue_workspace_height;
-    workspace.cell_width = paramValue_workspace_width;
-    geometry_msgs::Point ws;
-    ws.x = paramValue_workspace_x;
-    ws.y = paramValue_workspace_y;
-    ws.z = paramValue_workspace_z;
-    workspace.cells.push_back(ws);
-    */
-
-    /*
-    pub = n.advertise<sensor_msgs::PointCloud2> (pubTopic, 1000);
+    if(param_segmentation_on == 1){
+        pub_segmentedRGB = n.advertise<sensor_msgs::PointCloud2> (param_segmentation_topicRGB, 1);
+        pub_segmentedID = n.advertise<sensor_msgs::PointCloud2> (param_segmentation_topicID, 1);
+    }
+    // tf listen
     tf_listener = new tf::TransformListener;
-    infoDisplay();
-    for(int i=0;i<numPC;i++){
-        QString name("pcreceiver");
-        name += QString::number(i);
-        pcReceivers.push_back(new PCReceiver(argc, argv, name.toStdString(), subTopics.at(i)));
-        if(pcReceivers.at(i)->on_init()) ROS_INFO("SUCCESS to open node : %s", name.toStdString().data());
-        else ROS_INFO("FAIL to open node : %s", name.toStdString().data());
-    }
-    */
+
 }
 
 void CKinectFiltering::run()
-{/*
+{
     ros::Rate loop_rate(1000);
     int count = 0;
     while ( ros::ok() ) {
         bool isStarted = 1;
-        for(int i=0;i<numPC;i++){
+        for(int i=0;i<param_sub_num;i++){
             if(pcReceivers.at(i)->isStarted != 1)
                 isStarted = 0;
         }
-
         if(isStarted){
             pCloudOut.reset(new Cloud);
-
-            for(int k=0;k<numPC;k++){
+            for(int k=0;k<param_sub_num;k++){
                 PCReceiver *pc = pcReceivers.at(k);
-                pCloudTransformed.reset(new Cloud);
+                pCloud_output.reset(new Cloud);
                 *(pc->pCloud) = *(pc->pCloudIn);
 
-                // downsampling
-                pCloudSampled.reset(new Cloud);
-//                CloudConstPtr pCloudConst = (CloudConstPtr)(pc->pCloud);
-//                filter.downSampling(pCloudConst, pCloudSampled, 0.05, 0.05, 0.05);
-
+                // transform to the frame
                 ros::Time now = ros::Time::now();
-                tf_listener->waitForTransform("/origin", pc->pCloud->header.frame_id, now, ros::Duration(5.0));
-                pcl_ros::transformPointCloud("/origin", *(pc->pCloud), *pCloudTransformed, *tf_listener);
+                string frame = param_sub_frames.at(k);
+                tf_listener->waitForTransform(frame.data(), pc->pCloud->header.frame_id, now, ros::Duration(5.0));
+                pcl_ros::transformPointCloud(frame.data(), *(pc->pCloud), *pCloud_output, *tf_listener);
 
-                for(int i=0;i<pCloudTransformed->points.size();i++){
-                    PointT temp_point = pCloudTransformed->points[i];
-                    if(temp_point.z>0.1 && temp_point.x>=-1 && temp_point.x<=1 && temp_point.y>=0 && temp_point.y<=2)
-                        pCloudOut->points.push_back(pCloudTransformed->points[i]);
+                pCloud_input.reset(new Cloud);
+                pCloud_input = pCloud_output;
+                pCloud_output.reset(new Cloud);
+
+                // workspace
+                if(param_workspace_on == 1){
+                    PC_TYPE_WS ws;
+                    ws.top = param_workspace_y + param_workspace_height/2;
+                    ws.bottom = param_workspace_y - param_workspace_height/2;
+                    ws.left = param_workspace_x - param_workspace_width/2;
+                    ws.right = param_workspace_x + param_workspace_width/2;
+                    ws.zbottom = param_workspace_z;
+                    ws.ztop = param_workspace_z + param_workspace_zheight;
+
+                    filter.cut(pCloud_input, pCloud_output, ws);
+                    pCloud_input.reset(new Cloud);
+                    pCloud_input = pCloud_output;
+                    pCloud_output.reset(new Cloud);
+
+                    workspace.header.frame_id = frame.data();
+                    pub_workspace.publish (workspace);
+
                 }
-                pCloudTransformed.reset();
-                pCloudSampled.reset();
+                for(int i=0;i<pCloud_input->points.size();i++){
+                    pCloudOut->points.push_back(pCloud_input->points[i]);
+                }
             }
 
-            // downsampling
-//            CloudConstPtr pCloudConst = (CloudConstPtr)pCloudOut;
-//            filter.downSampling(pCloudConst, pCloudSampled, 0.01, 0.01, 0.01);
-            // publish pointcloud
-
-            pcl::toROSMsg(*pCloudOut, output);
-            output.header.frame_id="/origin";
-            pub.publish (output);
-
+            pCloud_input.reset(new Cloud);
+            pCloud_input = pCloudOut;
             pCloudOut.reset();
-            pCloudSampled.reset();
+
+            // downsampling
+            if(param_downsampling_on == 1){
+                CloudConstPtr pCloudConst = (CloudConstPtr)pCloud_input;
+                filter.downSampling(pCloudConst, pCloud_output, param_downsampling_leaf, param_downsampling_leaf, param_downsampling_leaf);
+                pCloud_input.reset(new Cloud);
+                pCloud_input = pCloud_output;
+                pCloud_output.reset(new Cloud);
+            }
+
+            // plane extraction
+            if(param_planeExtraction_on == 1){
+                std::vector<CloudPtr> pClouds_plane;
+                filter.extractPlane(pCloud_input, pCloud_output, pClouds_plane, param_planeExtraction_numPlane);
+                pCloud_input.reset(new Cloud);
+                pCloud_input = pCloud_output;
+                pCloud_output.reset(new Cloud);
+            }
+
+            // publish filtered pointcloud if no segmentation
+            if(pCloud_input->points.size() != 0){
+                pcl::toROSMsg(*pCloud_input, output);
+                output.header.frame_id = param_pub_frame.data();
+                pub_filtered.publish (output);
+                if(param_segmentation_on == 0)
+                    pCloud_input.reset();
+            }
+            // segmentation
+            if(param_segmentation_on == 1 && pCloud_input->points.size() != 0){
+                vector<CloudPtr> pClouds_object;
+                for(int i=0;i<pClouds_object.size();i++)
+                    pClouds_object.at(i).reset();
+                pClouds_object.clear();
+                filter.segmentation(pCloud_input, pClouds_object, param_segmentation_tolerance, param_segmentation_minSize, param_segmentation_maxSize);
+
+                // make a segmented cloud
+                CloudPtr pCloudSegRGB (new Cloud);
+                pCloudSegRGB->header = pCloud_input->header;
+                pCloudSegRGB->is_dense = pCloud_input->is_dense;
+                CloudPtrID pCloudSegID (new CloudID);
+                pCloudSegID->header = pCloud_input->header;
+                pCloudSegID->is_dense = pCloud_input->is_dense;
+                for(int i=0;i<pClouds_object.size();i++){
+                    CloudPtr pCloud = pClouds_object.at(i);
+                    int id = i;
+                    for(int j=0;j<pCloud->points.size();j++){
+                        PointT point = pCloud->points[j];
+                        PointT pointRGB;
+                        PointID pointID;
+
+                        pointRGB.x = point.x;
+                        pointRGB.y = point.y;
+                        pointRGB.z = point.z;
+                        pointRGB.r = point.r;
+                        pointRGB.g = point.g;
+                        pointRGB.b = point.b;
+                        pCloudSegRGB->points.push_back(pointRGB);
+
+                        pointID.x = point.x;
+                        pointID.y = point.y;
+                        pointID.z = point.z;
+                        pointID.intensity = id;
+                        pCloudSegID->points.push_back(pointID);
+                    }
+                }
+                if(pCloudSegRGB->points.size() != 0){
+                    sensor_msgs::PointCloud2 output_segmentedRGB;
+                    pcl::toROSMsg(*pCloudSegRGB, output_segmentedRGB);
+                    output_segmentedRGB.header.frame_id = param_pub_frame.data();
+                    pub_segmentedRGB.publish (output_segmentedRGB);
+                }
+                if(pCloudSegID->points.size() != 0){
+                    sensor_msgs::PointCloud2 output_segmentedID;
+                    pcl::toROSMsg(*pCloudSegID, output_segmentedID);
+                    output_segmentedID.header.frame_id = param_pub_frame.data();
+                    pub_segmentedID.publish (output_segmentedID);
+                }
+            }
+
 
         }
-
         ros::spinOnce();
         loop_rate.sleep();
         ++count;
@@ -110,7 +174,7 @@ void CKinectFiltering::run()
     }
     std::cout << "Ros shutdown, proceeding to close the gui." << std::endl;
     emit rosShutdown(); // used to signal the gui for a shutdown (useful to roslaunch)
-    */
+
 }
 
 void CKinectFiltering::readParam()
@@ -182,7 +246,7 @@ void CKinectFiltering::readParam()
         isParam = 0;
         param_workspace_on = 0;
     }
-    if(param_workspace_on){
+    if(param_workspace_on == 1){
         if(ros::param::has("/dhri/pointcloudFilter/workspace/x"))
             ros::param::get("/dhri/pointcloudFilter/workspace/x", param_workspace_x);
         else{
@@ -232,6 +296,13 @@ void CKinectFiltering::readParam()
             ROS_WARN("Parameters are set as default values");
             isParam = 0;
         }
+        workspace.cell_width = param_workspace_width;
+        workspace.cell_height = param_workspace_height;
+        geometry_msgs::Point point;
+        point.x = param_workspace_x;
+        point.y = param_workspace_y;
+        point.z = param_workspace_z;
+        workspace.cells.push_back(point);
     }
     // downsampling
     if(ros::param::has("/dhri/pointcloudFilter/downsampling/on"))
@@ -242,7 +313,7 @@ void CKinectFiltering::readParam()
         isParam = 0;
         param_downsampling_on = 0;
     }
-    if(param_downsampling_on){
+    if(param_downsampling_on == 1){
         if(ros::param::has("/dhri/pointcloudFilter/downsampling/leaf"))
             ros::param::get("/dhri/pointcloudFilter/downsampling/leaf", param_downsampling_leaf);
         else{
@@ -260,7 +331,7 @@ void CKinectFiltering::readParam()
         isParam = 0;
         param_planeExtraction_on = 0;
     }
-    if(param_planeExtraction_on){
+    if(param_planeExtraction_on == 1){
         if(ros::param::has("/dhri/pointcloudFilter/planeExtraction/numPlane"))
             ros::param::get("/dhri/pointcloudFilter/planeExtraction/numPlane", param_planeExtraction_numPlane);
         else{
@@ -278,7 +349,7 @@ void CKinectFiltering::readParam()
         isParam = 0;
         param_segmentation_on = 0;
     }
-    if(param_segmentation_on){
+    if(param_segmentation_on == 1){
         if(ros::param::has("/dhri/pointcloudFilter/segmentation/tolerance"))
             ros::param::get("/dhri/pointcloudFilter/segmentation/tolerance", param_segmentation_tolerance);
         else{
@@ -331,7 +402,7 @@ void CKinectFiltering::infoDisplay()
     }
     ROS_INFO("param_pub_topic : %s", param_pub_topic.data());
     ROS_INFO("param_pub_frame : %s", param_pub_frame.data());
-    if(param_workspace_on){
+    if(param_workspace_on == 1){
         ROS_INFO("param_workspace_x : %f", param_workspace_x);
         ROS_INFO("param_workspace_y : %f", param_workspace_y);
         ROS_INFO("param_workspace_z : %f", param_workspace_z);
@@ -340,126 +411,17 @@ void CKinectFiltering::infoDisplay()
         ROS_INFO("param_workspace_zheight : %f", param_workspace_zheight);
         ROS_INFO("param_workspace_topic : %s", param_workspace_topic.data());
     }
-    if(param_downsampling_on){
+    if(param_downsampling_on == 1){
         ROS_INFO("param_downsampling_leaf : %f", param_downsampling_leaf);
     }
-    if(param_planeExtraction_on){
+    if(param_planeExtraction_on == 1){
         ROS_INFO("param_downsampling_leaf : %d", param_planeExtraction_numPlane);
     }
-    if(param_segmentation_on){
+    if(param_segmentation_on == 1){
         ROS_INFO("param_segmentation_tolerance : %f", param_segmentation_tolerance);
         ROS_INFO("param_segmentation_minSize : %f", param_segmentation_minSize);
         ROS_INFO("param_segmentation_maxSize : %f", param_downsampling_leaf);
         ROS_INFO("param_segmentation_topicRGB : %s", param_segmentation_topicRGB.data());
         ROS_INFO("param_segmentation_topicID : %s", param_segmentation_topicID.data());
     }
-}
-
-void CKinectFiltering::processing()
-{
-    /*
-    // downsampling
-    if(paramValue_downsampling_on){
-        CloudConstPtr pCloudConst = (CloudConstPtr)pCloud_input;
-        filter.downSampling(pCloudConst, pCloud_output, paramValue_downsampling_leaf, paramValue_downsampling_leaf, paramValue_downsampling_leaf);
-        pCloud_input.reset(new Cloud);
-        pCloud_input = pCloud_output;
-        pCloud_output.reset(new Cloud);
-    }
-
-    // cut
-    if(paramValue_workspace_on){
-        isPub = 1;
-        PC_TYPE_WS ws;
-        ws.top = paramValue_workspace_y + paramValue_workspace_height/2;
-        ws.bottom = paramValue_workspace_y - paramValue_workspace_height/2;
-        ws.left = paramValue_workspace_x - paramValue_workspace_width/2;
-        ws.right = paramValue_workspace_x + paramValue_workspace_width/2;
-        ws.zbottom = paramValue_workspace_z;
-        ws.ztop = paramValue_workspace_z + paramValue_workspace_zheight;
-        ws.margin = 0.01;
-
-
-        sensor_msgs::PointCloud2 output;
-        output.header.frame_id="/origin";
-        pcl::toROSMsg(*pCloud_input, output);
-        pub_filtered.publish (output);
-
-        filter.cut(pCloud_input, pCloud_output, ws);
-        pCloud_input.reset(new Cloud);
-        pCloud_input = pCloud_output;
-        pCloud_output.reset(new Cloud);
-
-        workspace.header.frame_id="/origin";
-        pub_grid.publish (workspace);
-
-    }
-
-    // plane extraction
-    if(paramValue_planeExtraction_on){
-        std::vector<CloudPtr> pClouds_plane;
-        for(int i=0;i<pClouds_plane.size();i++)
-            pClouds_plane.at(i).reset();
-        pClouds_plane.clear();
-
-        filter.extractPlane(pCloud_input, pCloud_output, pClouds_plane, paramValue_planeExtraction_numPlane);
-        if(paramValue_segmentation_on){
-            isPub = 0;
-            pCloud_input.reset(new Cloud);
-            pCloud_input = pCloud_output;
-            pCloud_output.reset(new Cloud);
-        }
-        else{
-            isPub = 1;
-        }
-    }
-    // segmentation
-    if(paramValue_segmentation_on){
-        vector<CloudPtr> pClouds_object;
-        for(int i=0;i<pClouds_object.size();i++)
-            pClouds_object.at(i).reset();
-        pClouds_object.clear();
-        filter.segmentation(pCloud_input, pClouds_object, paramValue_segmentation_tolerance, paramValue_segmentation_minSize, paramValue_segmentation_maxSize);
-
-        // make a segmented cloud
-        CloudPtr pCloudSegRGB (new Cloud);
-        pCloudSegRGB->header = pCloud_input->header;
-        pCloudSegRGB->is_dense = pCloud_input->is_dense;
-        CloudPtrID pCloudSegID (new CloudID);
-        pCloudSegID->header = pCloud_input->header;
-        pCloudSegID->is_dense = pCloud_input->is_dense;
-        for(int i=0;i<pClouds_object.size();i++){
-            CloudPtr pCloud = pClouds_object.at(i);
-            int id = i;
-            for(int j=0;j<pCloud->points.size();j++){
-                PointT point = pCloud->points[j];
-                PointT pointRGB;
-                PointID pointID;
-
-                pointRGB.x = point.x;
-                pointRGB.y = point.y;
-                pointRGB.z = point.z;
-                pointRGB.r = point.r;
-                pointRGB.g = point.g;
-                pointRGB.b = point.b;
-                pCloudSegRGB->points.push_back(pointRGB);
-
-                pointID.x = point.x;
-                pointID.y = point.y;
-                pointID.z = point.z;
-                pointID.intensity = id;
-                pCloudSegID->points.push_back(pointID);
-            }
-        }
-        sensor_msgs::PointCloud2 output_segmentedRGB;
-        pcl::toROSMsg(*pCloudSegRGB, output_segmentedRGB);
-        output_segmentedRGB.header.frame_id="/origin";
-        pub_segmentedRGB.publish (output_segmentedRGB);
-
-        sensor_msgs::PointCloud2 output_segmentedID;
-        pcl::toROSMsg(*pCloudSegID, output_segmentedID);
-        output_segmentedID.header.frame_id="/origin";
-        pub_segmentedID.publish (output_segmentedID);
-    }
-    */
 }

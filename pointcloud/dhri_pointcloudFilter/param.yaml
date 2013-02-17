@@ -1,4 +1,4 @@
-/dhri/pointcloudFilter/sub/num: 2
+/dhri/pointcloudFilter/sub/num: 1
 /dhri/pointcloudFilter/sub/topic1: '/camera/depth_registered/points'
 /dhri/pointcloudFilter/sub/frame1: '/origin'
 /dhri/pointcloudFilter/sub/topic2: '/camera/depth_registered/points'
@@ -7,17 +7,17 @@
 /dhri/pointcloudFilter/pub/frame: '/origin'
 /dhri/pointcloudFilter/workspace/on: 1
 /dhri/pointcloudFilter/workspace/x: 0.
-/dhri/pointcloudFilter/workspace/y: 0.35
+/dhri/pointcloudFilter/workspace/y: 0.
 /dhri/pointcloudFilter/workspace/z: 0.
 /dhri/pointcloudFilter/workspace/width: 0.7
 /dhri/pointcloudFilter/workspace/height: 0.35
 /dhri/pointcloudFilter/workspace/zheight: 0.35
 /dhri/pointcloudFilter/workspace/topic: '/dhri/workspace'
-/dhri/pointcloudFilter/downsampling/on: 0
+/dhri/pointcloudFilter/downsampling/on: 1
 /dhri/pointcloudFilter/downsampling/leaf: 0.01
 /dhri/pointcloudFilter/planeExtraction/on: 0
 /dhri/pointcloudFilter/planeExtraction/numPlane: 1
-/dhri/pointcloudFilter/segmentation/on: 0
+/dhri/pointcloudFilter/segmentation/on: 1
 /dhri/pointcloudFilter/segmentation/tolerance: 0.02
 /dhri/pointcloudFilter/segmentation/minSize: 20
 /dhri/pointcloudFilter/segmentation/maxSize: 25000

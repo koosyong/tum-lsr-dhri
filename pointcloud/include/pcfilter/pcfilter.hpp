@@ -80,8 +80,7 @@ bool PCFilter<T>::cut(CloudPtr &cloud_in, CloudPtr &cloud_out, PC_TYPE_WS ws)
     for(int i=0;i<cloud_in->points.size();i++){
         T temp_point = cloud_in->points[i];
         // cut off
-//        if(temp_point.x<ws.right && temp_point.x>ws.left && temp_point.y<ws.top && temp_point.y>ws.bottom && temp_point.z>ws.zbottom && temp_point.z<ws.ztop)
-            if(temp_point.x<-0.01 || temp_point.x>0.01)
+        if(temp_point.x<ws.right && temp_point.x>ws.left && temp_point.y<ws.top && temp_point.y>ws.bottom && temp_point.z>ws.zbottom && temp_point.z<ws.ztop)
                 cloud_out->points.push_back(temp_point);
     }
     return 1;

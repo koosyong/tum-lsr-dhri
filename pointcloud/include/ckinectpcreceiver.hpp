@@ -23,9 +23,10 @@ template<typename PointT>
 void CKinectPCReceiver<PointT>::run()
 {
     ROS_INFO("Subscribe topic : %s",subTopic.data());
-//    ros::spin();
-    ros::MultiThreadedSpinner spinner(0);
+
+    ros::MultiThreadedSpinner spinner(10);
     spinner.spin();
+    ROS_INFO("Subscribe topic : %s",subTopic.data());
     emit rosShutdown(); // used to signal the gui for a shutdown (useful to roslaunch)
 }
 
@@ -33,28 +34,14 @@ void CKinectPCReceiver<PointT>::run()
 template<typename PointT>
 void CKinectPCReceiver<PointT>::cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
 {
-    //    FPS_CALC (subTopic.data());
-//    ROS_INFO("listening topic: %s ",subTopic.data());
     // Convert the sensor_msgs/PointCloud2 data to pcl/PointCloud
-    isStarted = 1;        
 
 
+    pcl::fromROSMsg (*input, *pCloudIn);
+    processing();
 
-        pcl::fromROSMsg (*input, *pCloudIn);
-        processing();
+    isStarted = 1;
 
-
-//    *pCloud = *pCloudIn;
-
-//    pCloudIn.reset();
-//    pCloudSampled.reset();
-//    pCloudOut.reset();
-
-//    ros::Rate r(100);
-//    r.sleep();
-
-
-    //    }
 }
 
 template<typename PointT>

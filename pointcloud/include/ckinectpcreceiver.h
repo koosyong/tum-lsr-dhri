@@ -65,7 +65,7 @@ private:
 public:
     CloudPtr pCloudIn, pCloudSampled, pCloudOut, pCloud;
     CloudConstPtr pCloudConst;
-    bool isStarted;
+    int isStarted;
     bool isUsing;
 
 };
