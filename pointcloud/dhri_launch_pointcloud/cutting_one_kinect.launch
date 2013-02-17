@@ -1,8 +1,0 @@
-<launch>
-  <include file="$(find dhri_launch_pointcloud)/kinect_frames_onecam.launch">
-  </include>
-  <include file="$(find dhri_launch_pointcloud)/openni_one_kinect.launch">
-  </include>
-  <node name="ckinect_cutting" pkg="ckinect_cutting" type="ckinect_cutting" />
-  <node name="rviz_camera_cut" pkg="rviz" type="rviz" args="-d ~/tum-lsr-dhri/pointcloud/rviz/kinect_one_cut.vcg" />
-</launch>
