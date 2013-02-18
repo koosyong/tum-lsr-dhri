@@ -9,7 +9,6 @@ class GaussianTrackContainer : public TrackContainer<Gaussian>
 {
 public:
     GaussianTrackContainer(int _maxFrame = 1000);
-    ~GaussianTrackContainer();
 };
 
 #endif // GAUSSIANTRACKCONTAINER_H

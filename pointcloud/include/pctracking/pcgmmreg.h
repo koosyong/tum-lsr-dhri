@@ -19,10 +19,9 @@ public:
     PCGMMReg();
     ~PCGMMReg(){
         delete func;
-        func = NULL;
     }
 
-    void init(shared_ptr<PCObject> _model, shared_ptr<PCObject> _scene, int _maxEval, FuncPub _funcPub = 0);
+    void init(PCObject* _model, PCObject* _scene, int _maxEval, FuncPub _funcPub = 0);
     void run();
     void perform_transform(const vnl_vector<double> &x);
 
@@ -30,7 +29,7 @@ private:
     void start_registration(vnl_vector<double>& params);
     void start_registration2(vnl_vector<double>& params);
     void set_bound();
-    void translate(shared_ptr<PCObject> object, vnl_vector<double> param);
+    void translate(PCObject* object, vnl_vector<double> param);
 
 public:
     PCObject transformed_model;
@@ -44,8 +43,8 @@ public:
     vnl_matrix<double> modelpoints, scenepoints;
     vnl_vector<double> param_norm;
 
-    shared_ptr<PCObject> model;
-    shared_ptr<PCObject> scene;
+    PCObject* model;
+    PCObject* scene;
 
 public:
     FuncPub funcPub;

@@ -4,26 +4,24 @@ template<class Object>
 IMFT<Object>::IMFT(int _window_short, int _window_long, int _maxID, funcWeight _weight, funcWeight _weight_fast)
     :window_short(_window_short), window_long(_window_long), maxID(_maxID), weight(_weight), weight_fast(_weight_fast)
 {
-
-    trackContainer.reset(new TrackContainerT(window_long, maxID));
+    trackContainer = new TrackContainerT(window_long, maxID);
     cnt = 0;
     m_isDebug = 0;
-    m_gNodeMap.reset(new ListGraph::NodeMap<V>(m_g));
-    m_gEdgeMap.reset(new ListGraph::EdgeMap<double>(m_g));
+    m_gNodeMap = new ListGraph::NodeMap<V>(m_g);
+    m_gEdgeMap = new ListGraph::EdgeMap<double>(m_g);
     m_newTrackID = 0;
 }
 
 template<class Object>
 IMFT<Object>::~IMFT()
 {
-//    trackContainer.reset();
-//    m_gNodeMap.reset();
-//    m_gEdgeMap.reset();
-
+    delete trackContainer;
+    delete m_gNodeMap;
+    delete m_gEdgeMap;
 }
 
 template<class Object>
-void IMFT<Object>::setFrame(vector< shared_ptr<Object> > objects, int stamp)
+void IMFT<Object>::setFrame(vector<Object*> objects, int stamp)
 {
     cnt++;
     m_currentT = stamp;
@@ -109,6 +107,7 @@ void IMFT<Object>::addToDGraph(VecPtr ptrs)
         m_vecOldEdge.push_back(m_g.id(e));
     }
 
+    m_maxWeight = 0.;
     // making nodes
     for(int i=0;i<ptrs.size();i++){
         // inNode
@@ -136,12 +135,20 @@ void IMFT<Object>::addToDGraph(VecPtr ptrs)
         (*m_gNodeMap)[xo] = vo;
 
         // connection to previous nodes
+
         for(ListGraph::NodeIt n(m_g); n != INVALID; ++n){
             if((*m_gNodeMap)[n].nFrame != vi.nFrame && !(*m_gNodeMap)[n].isIn){
-                (*m_gEdgeMap)[m_g.addEdge(n,xi)] = weight((*m_gNodeMap)[m_g.nodeFromId(m_g.id(n)-1)].ptr.object, vi.ptr.object);
+                double w = weight((*m_gNodeMap)[m_g.nodeFromId(m_g.id(n)-1)].ptr.object, vi.ptr.object);
+                (*m_gEdgeMap)[m_g.addEdge(n,xi)] = w;
+                if(w > m_maxWeight) m_maxWeight = w;
 
             }
         }
+
+    }
+    // convert weights to reversed weights from 0 to 1
+    for(ListGraph::EdgeIt a(m_g); a != INVALID; ++a){
+        (*m_gEdgeMap)[a] = 1.-(*m_gEdgeMap)[a]/m_maxWeight;
     }
 }
 
@@ -293,6 +300,7 @@ void IMFT<Object>::twoFrameCorresponding(vector<ListGraph::Node> vecUFrame, vect
         gNodeMap[n] = v;
     }
     // make nodes of VFrame : save node id of VFrame
+    double max = 0;
     for(int i=0;i<vecVFrame.size();i++){
         ListGraph::Node n = g.addNode();
         V v;
@@ -302,12 +310,21 @@ void IMFT<Object>::twoFrameCorresponding(vector<ListGraph::Node> vecUFrame, vect
         gNodeMap[n] = v;
 
         // connection
+
         for(ListGraph::NodeIt pn(g); pn != INVALID; ++pn){
             if(gNodeMap[pn].nFrame != v.nFrame){
-                gEdgeMap[g.addEdge(pn,n)] = weight(gNodeMap[pn].ptr.object, v.ptr.object);
+                double w = weight(gNodeMap[pn].ptr.object, v.ptr.object);
+                gEdgeMap[g.addEdge(pn,n)] = w;
+                if(w > max) max = w;
             }
         }
+
+
+
     }
+    // convert weights to reversed weights from 0 to 1
+    for(ListGraph::EdgeIt a(g); a != INVALID; ++a)
+        gEdgeMap[a] = 1.-gEdgeMap[a]/max;
 
     // maximum weighted matching
     MaxWeightedMatching<ListGraph, ListGraph::EdgeMap<double> > mwm(g, gEdgeMap);
@@ -326,7 +343,8 @@ void IMFT<Object>::twoFrameCorresponding(vector<ListGraph::Node> vecUFrame, vect
             if(m_isDebug)   printf("2-Frame Connection %d, %d nodes\n", origUId, origVId);
 
             ListGraph::Edge e = m_g.addEdge(newU,newV);
-            (*m_gEdgeMap)[e] = weight((*m_gNodeMap)[newU].ptr.object, (*m_gNodeMap)[newV].ptr.object);
+            double w = weight((*m_gNodeMap)[newU].ptr.object, (*m_gNodeMap)[newV].ptr.object);
+            (*m_gEdgeMap)[e] = 1.-w/m_maxWeight;
             (*m_gNodeMap)[m_g.u(e)].edgeID = m_g.id(e);
             (*m_gNodeMap)[m_g.v(e)].edgeID = m_g.id(e);
         }
@@ -436,7 +454,7 @@ void IMFT<Object>::updateTracks()
 
 
 template<class Object>
-shared_ptr< typename IMFT<Object>::TrackContainerT > IMFT<Object>::extractTracks()
+typename IMFT<Object>::TrackContainerT* IMFT<Object>::extractTracks()
 {
     return trackContainer;
 }

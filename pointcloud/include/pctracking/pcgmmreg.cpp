@@ -10,7 +10,7 @@ PCGMMReg::PCGMMReg()
     func = new PCGMMReg_func;
 }
 
-void PCGMMReg::init(shared_ptr<PCObject> _model, shared_ptr<PCObject> _scene, int _maxEval, FuncPub _funcPub)
+void PCGMMReg::init(PCObject* _model, PCObject* _scene, int _maxEval, FuncPub _funcPub)
 {
     model = _model;
     scene = _scene;
@@ -54,7 +54,7 @@ void PCGMMReg::init(shared_ptr<PCObject> _model, shared_ptr<PCObject> _scene, in
     perform_transform(param_rigid);
 }
 
-void PCGMMReg::translate(shared_ptr<PCObject> object, vnl_vector<double> param)
+void PCGMMReg::translate(PCObject* object, vnl_vector<double> param)
 {
     for(int i=0;i<object->gmm.size();i++){
         object->gmm.at(i).mean[0] += param[0];
@@ -69,10 +69,7 @@ void PCGMMReg::run()
     start_registration(param_rigid);
     //    start_registration2(param_rigid);
     perform_transform(param_rigid);
-    shared_ptr<PCObject> modelPtr;
-    modelPtr.reset(new PCObject);
-    *modelPtr = transformed_model;
-    translate(modelPtr, param_norm);
+    translate(&transformed_model, param_norm);
     translate(scene, param_norm);
 
 }
@@ -135,8 +132,8 @@ void PCGMMReg::start_registration2(vnl_vector<double>& params)
         params[4] = params[4] - g[4];
         params[5] = params[5] - g[5];
 
-        vcl_cout <<"cnt: "<<i<< " f: " << fv << " g: " << g<< vcl_endl;
-        vcl_cout << "Solution: " << params << vcl_endl;
+//        vcl_cout <<"cnt: "<<i<< " f: " << fv << " g: " << g<< vcl_endl;
+//        vcl_cout << "Solution: " << params << vcl_endl;
     }
 }
 
@@ -158,7 +155,7 @@ void PCGMMReg::start_registration(vnl_vector<double>& params)
     // When an iteration changes the function value by an amount smaller than
     // this factor times the machine epsilon (scaled by function magnitude)
     // convergence is assumed.  The default value is 1e+7.
-    minimizer.set_cost_function_convergence_factor(1e+10);
+    minimizer.set_cost_function_convergence_factor(1e+11);
 
     //: Set the convergence tolerance on F (sum of squared residuals).
     // When the differences in successive RMS errors is less than this, the
@@ -186,7 +183,7 @@ void PCGMMReg::start_registration(vnl_vector<double>& params)
     func->set_gmmreg(this);
     minimizer.set_max_function_evals(maxEval);
 
-    minimizer.set_trace(1);
+//    minimizer.set_trace(1);
     //    std::cout<<"factor"<<minimizer.get_cost_function_convergence_factor()<<std::endl;
 
     //    minimizer.set_projected_gradient_tolerance(0.0000000000001);
@@ -204,7 +201,7 @@ void PCGMMReg::start_registration(vnl_vector<double>& params)
               << "Evaluations: " << minimizer.get_num_evaluations() << vcl_endl;
       */
 
-    vcl_cout << "Solution: " << params << vcl_endl;
+//    vcl_cout << "Solution: " << params << vcl_endl;
 }
 
 
@@ -272,5 +269,5 @@ void PCGMMReg::perform_transform(const vnl_vector<double> &x)
     model->setTransParam(x);
     param_rigid = x;
 
-    funcPub(output_model);
+//    funcPub(output_model);
 }

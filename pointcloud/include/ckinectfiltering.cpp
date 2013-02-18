@@ -34,7 +34,7 @@ void CKinectFiltering::ros_comms_init()
 
 void CKinectFiltering::run()
 {
-    ros::Rate loop_rate(1000);
+    ros::Rate loop_rate(100);
     int count = 0;
     while ( ros::ok() ) {
         bool isStarted = 1;

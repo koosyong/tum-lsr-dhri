@@ -16,11 +16,12 @@ double PCGMMReg_func::weight_l2(PCObject &model, PCObject &scene)
     double energy1 = 0.;
     for(int i=0;i<m;i++){
         for(int j=0;j<m;j++){
-            Eigen::Matrix3d cov = model.gmm.at(i).covariance + model.gmm.at(j).covariance;
-            Eigen::Vector3d mean = model.gmm.at(i).mean - model.gmm.at(j).mean;
-            Eigen::Matrix3d invij = cov.inverse();
+            int dim = model.gmm.at(i).dim;
+            Eigen::MatrixXd cov = model.gmm.at(i).covariance + model.gmm.at(j).covariance;
+            Eigen::VectorXd mean = model.gmm.at(i).mean - model.gmm.at(j).mean;
+            Eigen::MatrixXd invij = cov.inverse();
             double a = mean.transpose()*invij*mean;
-            double gauss = 1./sqrt(pow(2*pi,3)*cov.determinant())*exp(-0.5*a);
+            double gauss = 1./sqrt(pow(2*pi,dim)*cov.determinant())*exp(-0.5*a);
             energy1 += model.gmm.at(i).weight*model.gmm.at(j).weight*gauss;
         }
     }
@@ -30,11 +31,12 @@ double PCGMMReg_func::weight_l2(PCObject &model, PCObject &scene)
     for(int i=0;i<m;i++){
         double sum[3] = {0.,0.,0.};
         for(int j=0;j<s;j++){
-            Eigen::Matrix3d cov = model.gmm.at(i).covariance + scene.gmm.at(j).covariance;
-            Eigen::Vector3d mean = model.gmm.at(i).mean - scene.gmm.at(j).mean;
-            Eigen::Matrix3d invij = cov.inverse();
+            int dim = model.gmm.at(i).dim;
+            Eigen::MatrixXd cov = model.gmm.at(i).covariance + scene.gmm.at(j).covariance;
+            Eigen::VectorXd mean = model.gmm.at(i).mean - scene.gmm.at(j).mean;
+            Eigen::MatrixXd invij = cov.inverse();
             double a = mean.transpose()*invij*mean;
-            double gauss = 1./sqrt(pow(2*pi,3)*cov.determinant())*exp(-0.5*a);
+            double gauss = 1./sqrt(pow(2*pi,dim)*cov.determinant())*exp(-0.5*a);
             energy2 += model.gmm.at(i).weight*scene.gmm.at(j).weight*gauss;
 //            cout<<"weight i "<<model.gmm.at(i).weight<<endl;
 //            cout<<"weight j "<<scene.gmm.at(j).weight<<endl;
@@ -59,11 +61,12 @@ double PCGMMReg_func::weight_l2(PCObject &model, PCObject &scene)
     double energy3 = 0.;
     for(int i=0;i<s;i++){
         for(int j=0;j<s;j++){
-            Eigen::Matrix3d cov = scene.gmm.at(i).covariance + scene.gmm.at(j).covariance;
-            Eigen::Vector3d mean = scene.gmm.at(i).mean - scene.gmm.at(j).mean;
-            Eigen::Matrix3d invij = cov.inverse();
+            int dim = scene.gmm.at(i).dim;
+            Eigen::MatrixXd cov = scene.gmm.at(i).covariance + scene.gmm.at(j).covariance;
+            Eigen::VectorXd mean = scene.gmm.at(i).mean - scene.gmm.at(j).mean;
+            Eigen::MatrixXd invij = cov.inverse();
             double a = mean.transpose()*invij*mean;
-            double gauss = 1./sqrt(pow(2*pi,3)*cov.determinant())*exp(-0.5*a);
+            double gauss = 1./sqrt(pow(2*pi,dim)*cov.determinant())*exp(-0.5*a);
             energy3 += scene.gmm.at(i).weight*scene.gmm.at(j).weight*gauss;
         }
     }

@@ -25,42 +25,45 @@ class Point
 {
 public:
     Point();
-    Point(PointT point);
+    Point(PointT point, int _dim);
 
 public:
     Eigen::Vector3d pos;
     Eigen::Vector3d rgb;
     int id;
+    int dim;
 };
 
 class Gaussian
 {
 public:
     Gaussian();
-    Gaussian(CloudPtr points, double scale);
+    Gaussian(int _dim);
+//    Gaussian(CloudPtr points, double scale);
 
 public:
-    Eigen::Vector3d mean;
+    Eigen::VectorXd mean;
     Eigen::Vector3d velocity;
     Eigen::Vector3d eigenvalues;
     Eigen::Matrix3d eigenvectors;
-    Eigen::Matrix3d covariance;
-    Eigen::Matrix3d cov_inverse;
+    Eigen::MatrixXd covariance;
+    Eigen::MatrixXd cov_inverse;
     double cov_determinant;
 
-    Eigen::Vector3d predictive_mean;
-    Eigen::Matrix3d predictive_covariance;
+    Eigen::VectorXd predictive_mean;
+    Eigen::MatrixXd predictive_covariance;
 
 
     double weight;
     int nPoint;
     bool isEmpty;
+    int dim;
 
     vnl_matrix<double> translation;
     vnl_matrix<double> rotation;
 
 public:
-    double evalPoint(Point point);
+//    double evalPoint(Point point);
     void updateParam(vnl_vector<double> newParam);
     void initPrediction();
 

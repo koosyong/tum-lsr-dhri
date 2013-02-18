@@ -6,12 +6,10 @@ template<class Object>
 TrackContainer<Object>::TrackContainer(int _maxFrame, int _maxID)
     :maxFrame(_maxFrame), maxID(_maxID)
 {
-    oldCnt = 0;
     srand(time(NULL));
-
-    r.reset(new int[maxID]);
-    g.reset(new int[maxID]);
-    b.reset(new int[maxID]);
+    r = new int[maxID];
+    g = new int[maxID];
+    b = new int[maxID];
 
     for(int i=0;i<maxID;i++){
         r[i] = rand() % 256;
@@ -19,18 +17,16 @@ TrackContainer<Object>::TrackContainer(int _maxFrame, int _maxID)
         b[i] = rand() % 256;
     }
 }
-
 template<class Object>
 TrackContainer<Object>::~TrackContainer()
 {
-    r.reset();
-    g.reset();
-    b.reset();
+    for(int i=0;i<tracks.size();i++)
+        delete tracks.at(i);
+    tracks.clear();
 
-//    for(int i=0;i<tracks.size();i++)
-//        tracks.at(i).reset();
-//    tracks.clear();
-
+    delete[] r;
+    delete[] g;
+    delete[] b;
 }
 
 template<class Object>
@@ -39,8 +35,7 @@ bool TrackContainer<Object>::createTrack(Object &object, int initT)
     int id = newId();
     if(id == -1)
         return 0;
-    shared_ptr<TrackT> track;
-    track.reset(new TrackT(id));
+    TrackT *track = new TrackT(id);
     track->insert(object, initT);
     tracks.push_back(track);
 }
@@ -52,8 +47,7 @@ bool TrackContainer<Object>::createTrack(Object &object, int initT, int id)
         if(tracks.at(i)->id == id)
             return 0;
 
-    shared_ptr<TrackT> track;
-    track.reset(new TrackT(id));
+    TrackT *track = new TrackT(id);
     track->insert(object, initT);
     tracks.push_back(track);
 }
@@ -63,7 +57,7 @@ template<class Object>
 bool TrackContainer<Object>::push_back_track(int id, Object &object, int time)
 {
     // find track of id
-    shared_ptr<TrackT> track;
+    TrackT *track = 0;
     for(int i=0;i<tracks.size();i++){
         if(tracks.at(i)->id == id){
             track = tracks.at(i);
@@ -77,7 +71,7 @@ bool TrackContainer<Object>::push_back_track(int id, Object &object, int time)
 template<class Object>
 bool TrackContainer<Object>::updateObject(int id, int time, Object &object)
 {
-    shared_ptr<TrackT> track;
+    TrackT *track = 0;
     for(int i=0;i<tracks.size();i++){
         if(tracks.at(i)->id == id){
             track = tracks.at(i);
@@ -111,7 +105,6 @@ int TrackContainer<Object>::newId()
     }
     int nRand = cand[rand()%nCand];
     delete[] cand;
-    cand = NULL;
     return nRand;
 
     //    if(tracks.size() == 0)
@@ -142,7 +135,7 @@ void TrackContainer<Object>::deleteNoUpdatedTracks(int size)
 {
     deletedTrackIDs.clear();
     if(tracks.size() == 0) return;
-    shared_ptr<TrackT> track;
+    TrackT *track = 0;
 
     //    typename VecTrackPtr::iterator it = tracks.begin();
     for(typename VecTrackPtr::iterator it = tracks.begin(); it!=tracks.end();){
@@ -153,9 +146,7 @@ void TrackContainer<Object>::deleteNoUpdatedTracks(int size)
             //            printf("Delete Track : %d\n", track->id);
             deletedTrackIDs.push_back(track->id);
             track->terminate();
-            track.reset();
-//            delete track;
-//            track = NULL;
+            delete track;
             it = tracks.erase(it);
         }else{
             ++it;

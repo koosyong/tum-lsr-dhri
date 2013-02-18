@@ -5,15 +5,11 @@
 #include <vector>
 using namespace std;
 
-#include <boost/shared_ptr.hpp>
-#include <boost/shared_array.hpp>
-using namespace boost;
-
 template<class Object>
 class TrackContainer
 {
     typedef Track<Object> TrackT;
-    typedef vector< shared_ptr<TrackT> > VecTrackPtr;
+    typedef vector<TrackT*> VecTrackPtr;
 public:
     TrackContainer(int _maxFrame = 1000, int _maxID = 1000);
     ~TrackContainer();
@@ -34,13 +30,10 @@ public:
     VecTrackPtr tracks;
     int currentT;
 
-public:
+protected:
     int maxFrame;
-    int oldCnt;
     int maxID;
-    shared_array<int> r;
-    shared_array<int> g;
-    shared_array<int> b;
+    int *r, *g, *b;
 };
 
 #include "trackcontainer.hpp"

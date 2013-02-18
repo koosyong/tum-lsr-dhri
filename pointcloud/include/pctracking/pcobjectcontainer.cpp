@@ -14,11 +14,9 @@ PCObjectContainer::PCObjectContainer(CloudPtr _pCloud)
 
 PCObjectContainer::~PCObjectContainer()
 {
-
     for(int i=0;i<objects.size();i++)
-        objects.at(i).reset();
-//        if(objects.at(i) != NULL)
-//            delete objects.at(i);
+        if(objects.at(i) != NULL)
+            delete objects.at(i);
     objects.clear();
 }
 
@@ -62,8 +60,7 @@ void PCObjectContainer::makingObjects() // only for PointT : pcl::PointXYZI
 void PCObjectContainer::makeNewObject(PCObject& object)
 {
     num++;
-    shared_ptr<PCObject> newObject;
-    newObject.reset(new PCObject(num));
+    PCObject *newObject = new PCObject(num);
     *newObject = object;
     objects.push_back(newObject);
 
@@ -79,11 +76,11 @@ bool PCObjectContainer::deleteObject(int id)
 {
     bool isExist = 0;
     // find a object of id
-    for(vector< shared_ptr<PCObject> >::iterator it = objects.begin(); it!=objects.end();){
+    for(vector<PCObject*>::iterator it = objects.begin(); it!=objects.end();){
         if((*it)->id == id){
             isExist = 1;
-            it->reset();// = NULL;
-//            delete (*it);
+            *it = NULL;
+            delete (*it);
             objects.erase(it);
             return 1;
         }

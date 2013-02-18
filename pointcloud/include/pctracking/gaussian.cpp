@@ -5,18 +5,33 @@ Point::Point()
 
 }
 
-Point::Point(PointT point)
+Point::Point(PointT point, int _dim)
 {
-    pos[0] = point.x;
-    pos[1] = point.y;
-    pos[2] = point.z;
-    rgb[0] = point.r;
-    rgb[1] = point.g;
-    rgb[2] = point.b;
+    dim = _dim;
+//    if(dim == 3){
+//        pos[0] = (double)point.x;
+//        pos[1] = (double)point.y;
+//        pos[2] = (double)point.z;
+//    }
+//    if(dim == 6){
+        pos[0] = (double)point.x;
+        pos[1] = (double)point.y;
+        pos[2] = (double)point.z;
+        rgb[0] = (double)point.r / 4000;
+        rgb[1] = (double)point.g / 4000;
+        rgb[2] = (double)point.b / 4000;
+//    }
+    //    cout<<"r "<<(double)point.r<<" g "<<(double)point.g<<" b "<<(double)point.b<<endl;
 }
 
 Gaussian::Gaussian()
 {
+
+}
+
+Gaussian::Gaussian(int _dim)
+{
+    dim = _dim;
     isEmpty = 0;
     rotation.set_size(3,3);
     rotation[0][0] = 1;
@@ -34,18 +49,30 @@ Gaussian::Gaussian()
     translation[0][1] = 0;
     translation[0][2] = 0;
 
+    if(dim == 6){
+        mean = Eigen::VectorXd(6);
+        covariance = Eigen::MatrixXd(6,6);
+        cov_inverse = Eigen::MatrixXd(6,6);
+    }
+    if(dim == 3){
+        mean = Eigen::VectorXd(3);
+        covariance = Eigen::MatrixXd(3,3);
+        cov_inverse = Eigen::MatrixXd(3,3);
+    }
 }
 
 void Gaussian::initPrediction()
 {
-
-
     predictive_mean = mean;
     predictive_covariance = covariance;
 }
-
+/*
 Gaussian::Gaussian(CloudPtr points, double scale)
 {
+    mean = Eigen::VectorXd(6);
+    covariance = Eigen::Matrix3d(6,6);
+    cov_inverse = Eigen::Matrix3d(6,6);
+
     isEmpty = 0;
     rotation.set_size(3,3);
     rotation[0][0] = 1;
@@ -66,60 +93,17 @@ Gaussian::Gaussian(CloudPtr points, double scale)
 
     vector<Gaussian> set;
     nPoint = points->points.size();
-//    mean[0] = 0.;
-//    mean[1] = 0.;
-//    mean[2] = 0.;
-//    for(int i=0;i<nPoint;i++){
-//        mean[0] += points->points.at(i).x;
-//        mean[1] += points->points.at(i).y;
-//        mean[2] += points->points.at(i).z;
-//    }
-//    mean[0] /= (double)nPoint;
-//    mean[1] /= (double)nPoint;
-//    mean[2] /= (double)nPoint;
 
-//    for(int i=0;i<3;i++){
-//        for(int j=0;j<3;j++){
-//            covariance(i,j) = 0.;
-//        }
-//    }
 
-//    for(int i=0;i<nPoint;i++){
-//        Eigen::Vector3d x;
-//        x[0] = points->points.at(i).x;
-//        x[1] = points->points.at(i).y;
-//        x[2] = points->points.at(i).z;
-//        covariance += (x-mean)*(x-mean).transpose();
-//    }
-//    covariance /= nPoint;
-
-//    for(int i=0;i<3;i++){
-//        for(int j=0;j<3;j++){
-//            for(int k=0;k<nPoint;k++){
-//                Eigen::Vector3d x;
-//                x[0] = points->points.at(k).x;
-//                x[1] = points->points.at(k).y;
-//                x[2] = points->points.at(k).z;
-//                covariance(i,j) += (x[i]-mean[i])*(x[j]-mean[j]);
-//            }
-//        }
-//    }
-//    for(int i=0;i<3;i++){
-//        for(int j=0;j<3;j++){
-//            for(int k=0;k<nPoint;k++)
-//                covariance(i,j) /= nPoint;
-//        }
-//    }
-    double scaleColor = 10;
     for(int i=0;i<nPoint;i++){
         Gaussian gaussianPoint;
-        gaussianPoint.mean[0] = points->points.at(i).x;
-        gaussianPoint.mean[1] = points->points.at(i).y;
-        gaussianPoint.mean[2] = points->points.at(i).z;
+        gaussianPoint.mean[0] = (double)points->points.at(i).x;
+        gaussianPoint.mean[1] = (double)points->points.at(i).y;
+        gaussianPoint.mean[2] = (double)points->points.at(i).z;
 
-        gaussianPoint.mean[3] = points->points.at(i).r;
-        gaussianPoint.mean[4] = points->points.at(i).g;
-        gaussianPoint.mean[5] = points->points.at(i).b;
+        gaussianPoint.mean[3] = (double)points->points.at(i).r / 2560;
+        gaussianPoint.mean[4] = (double)points->points.at(i).g / 2560;
+        gaussianPoint.mean[5] = (double)points->points.at(i).b / 2560;
 
         gaussianPoint.covariance(0,0) = scale*scale;
         gaussianPoint.covariance(0,1) = 0;
@@ -145,28 +129,28 @@ Gaussian::Gaussian(CloudPtr points, double scale)
         gaussianPoint.covariance(3,0) = 0;
         gaussianPoint.covariance(3,1) = 0;
         gaussianPoint.covariance(3,2) = 0;
-        gaussianPoint.covariance(3,3) = 0;
-        gaussianPoint.covariance(3,4) = scaleColor*scaleColor;
+        gaussianPoint.covariance(3,3) = scale*scale;
+        gaussianPoint.covariance(3,4) = 0;
         gaussianPoint.covariance(3,5) = 0;
 
         gaussianPoint.covariance(4,0) = 0;
         gaussianPoint.covariance(4,1) = 0;
         gaussianPoint.covariance(4,2) = 0;
         gaussianPoint.covariance(4,3) = 0;
-        gaussianPoint.covariance(4,4) = 0;
-        gaussianPoint.covariance(4,5) = scaleColor*scaleColor;
+        gaussianPoint.covariance(4,4) = scale*scale;
+        gaussianPoint.covariance(4,5) = 0;
 
         gaussianPoint.covariance(5,0) = 0;
         gaussianPoint.covariance(5,1) = 0;
         gaussianPoint.covariance(5,2) = 0;
         gaussianPoint.covariance(5,3) = 0;
         gaussianPoint.covariance(5,4) = 0;
-        gaussianPoint.covariance(5,5) = scaleColor*scaleColor;
+        gaussianPoint.covariance(5,5) = scale*scale;
 
         gaussianPoint.weight = 1./(double)nPoint;
         gaussianPoint.nPoint = 1;
-//        gaussianPoint.cov_determinant = gaussianPoint.covariance.determinant();
-//        gaussianPoint.cov_inverse = gaussianPoint.covariance.inverse();
+        //        gaussianPoint.cov_determinant = gaussianPoint.covariance.determinant();
+        gaussianPoint.cov_inverse = gaussianPoint.covariance.inverse();
         set.push_back(gaussianPoint);
     }
     Eigen::Vector3d t;
@@ -188,7 +172,7 @@ Gaussian::Gaussian(CloudPtr points, double scale)
 
     initPrediction();
 }
-
+*/
 
 void Gaussian::quaternion2rotation(vnl_vector<double> q, vnl_matrix<double>& R, vnl_matrix<double>& g1, vnl_matrix<double>& g2, vnl_matrix<double>& g3, vnl_matrix<double>& g4){
     double x,y,z,r;
@@ -278,7 +262,7 @@ void Gaussian::quaternion2rotation(vnl_vector<double> q, vnl_matrix<double>& R){
     double ss = (x2+y2+z2+r2);
     R = R/ss;
 }
-
+/*
 double Gaussian::evalPoint(Point point)
 {
     double det = cov_determinant;
@@ -287,10 +271,10 @@ double Gaussian::evalPoint(Point point)
     double a = (point.pos-mean).transpose()*inv*(point.pos-mean);
     return exp(-0.5*a);
 
-//    return exp(-0.5*a) / sqrt(pow(2*pi,6));
+    //    return exp(-0.5*a) / sqrt(pow(2*pi,6));
 
 }
-
+*/
 void Gaussian::updateParam(vnl_vector<double> newParam)
 {
     // transformation quaternion to matrix and update roation, translation parameters
@@ -319,6 +303,8 @@ void Gaussian::updateParam(vnl_vector<double> newParam)
     predictive_mean[0] = pred_mean[0][0];
     predictive_mean[1] = pred_mean[0][1];
     predictive_mean[2] = pred_mean[0][2];
+
+
 
     vnl_matrix<double> cov(3,3), pred_cov;
     for(int i=0;i<3;i++)

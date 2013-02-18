@@ -1,0 +1,8 @@
+<launch>
+  <arg name="param" default="param.yaml" />
+  <arg name="gui" default="on" />
+
+  <rosparam command="load" file="$(find dhri_multipleObjectTracking)/$(arg param)" />
+  <node name="dhri_multipleObjectTracking" pkg="dhri_multipleObjectTracking" type="multipleObjectTracking" args="$(find dhri_multipleObjectTracking) $(arg param) $(arg gui)" />
+
+</launch>

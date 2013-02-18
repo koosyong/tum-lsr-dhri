@@ -9,8 +9,6 @@
 #include <pcl_ros/transforms.h>
 
 #include "pcobject.h"
-#include <boost/shared_ptr.hpp>
-using namespace boost;
 
 class PCObjectContainer
 {
@@ -29,7 +27,7 @@ private:
     void makingObjects();
 
 public:
-    vector< shared_ptr<PCObject> > objects;
+    vector<PCObject*> objects;
     int num;
 
 private:

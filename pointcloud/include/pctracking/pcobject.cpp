@@ -5,17 +5,19 @@
 
 PCObject::PCObject()
 {
-//    isParamExist = NULL;
-//    imftGaussians = NULL;
-    gaussianTracks = IMFT<Gaussian>::TrackContainerT(10);
+    isParamExist = 0;
+    imftGaussians = 0;
+    gaussianTracks = new GaussianTrackContainer(1000);
 
-//    topology_graph = NULL;
-//    topology_nodeMap = NULL;
-//    topology_edgeMap =  NULL;
+    topology_graph = NULL;
+    topology_nodeMap = NULL;
+    topology_edgeMap =  NULL;
+    alpha = 1;
+    th_edge = 0.80;
 
-    topology_graph.reset(new ListGraph());
-    topology_nodeMap.reset(new ListGraph::NodeMap<Gaussian>(*topology_graph));
-    topology_edgeMap.reset(new ListGraph::EdgeMap<double>(*topology_graph));
+    topology_graph = new ListGraph();
+    topology_nodeMap = new ListGraph::NodeMap<Gaussian>(*topology_graph);
+    topology_edgeMap = new ListGraph::EdgeMap<double>(*topology_graph);
     filteredWeight = 0.;
 
     diffWeight = new double[10];
@@ -26,16 +28,19 @@ PCObject::PCObject()
 PCObject::PCObject(int _id)
     :id(_id)
 {
-//    isParamExist = NULL;
-//    imftGaussians = NULL;
-    gaussianTracks = IMFT<Gaussian>::TrackContainerT(10);
-//    topology_graph = NULL;
-//    topology_nodeMap = NULL;
-//    topology_edgeMap = NULL;
+    isParamExist = 0;
+    imftGaussians = 0;
+    gaussianTracks = new GaussianTrackContainer(1000);
+    topology_graph = NULL;
+    topology_nodeMap = NULL;
+    topology_edgeMap = NULL;
 
-    topology_graph.reset(new ListGraph());
-    topology_nodeMap.reset(new ListGraph::NodeMap<Gaussian>(*topology_graph));
-    topology_edgeMap.reset(new ListGraph::EdgeMap<double>(*topology_graph));
+    alpha = 1;
+    th_edge = 0.80;
+
+    topology_graph = new ListGraph();
+    topology_nodeMap = new ListGraph::NodeMap<Gaussian>(*topology_graph);
+    topology_edgeMap = new ListGraph::EdgeMap<double>(*topology_graph);
     filteredWeight = 0.;
 
     diffWeight = new double[10];
@@ -45,16 +50,13 @@ PCObject::PCObject(int _id)
 
 PCObject::~PCObject()
 {
-//    points.clear();
-//    gmm.clear();
-//    for(int i=0;i<frame.size();i++)
-//        frame.at(i).reset();
-//    edges.clear();
-//    imftGaussians.reset();
-//    topology_graph.reset();
-//    topology_nodeMap.reset();
-//    topology_edgeMap.reset();
-
+    //    if(imftGaussians != 0)
+    //        delete imftGaussians;
+    //    if(gaussianTracks != 0)
+    //        delete gaussianTracks;
+    //    if(topology_graph != 0) delete topology_graph;
+    //    if(topology_nodeMap != 0) delete topology_nodeMap;
+    //    if(topology_edgeMap != 0) delete topology_edgeMap;
 }
 
 void PCObject::insert(Point p)
@@ -81,7 +83,7 @@ Point PCObject::getCentroid()
     centroid.pos /= n;
     return centroid;
 }
-
+/*
 void PCObject::initialGMM(double _scale)
 {
     scale = _scale;
@@ -90,16 +92,54 @@ void PCObject::initialGMM(double _scale)
     int n = points.size();
     for(int i=0;i<n;i++){
         Gaussian gaussian;
-        gaussian.mean = points.at(i).pos;
+        gaussian.mean[0] = points.at(i).pos[0];
+        gaussian.mean[1] = points.at(i).pos[1];
+        gaussian.mean[2] = points.at(i).pos[2];
+        gaussian.mean[3] = points.at(i).rgb[0];
+        gaussian.mean[4] = points.at(i).rgb[1];
+        gaussian.mean[5] = points.at(i).rgb[2];
+
         gaussian.covariance(0,0) = scale*scale;
         gaussian.covariance(0,1) = 0;
         gaussian.covariance(0,2) = 0;
+        gaussian.covariance(0,3) = 0;
+        gaussian.covariance(0,4) = 0;
+        gaussian.covariance(0,5) = 0;
+
         gaussian.covariance(1,0) = 0;
         gaussian.covariance(1,1) = scale*scale;
         gaussian.covariance(1,2) = 0;
+        gaussian.covariance(1,3) = 0;
+        gaussian.covariance(1,4) = 0;
+        gaussian.covariance(1,5) = 0;
+
         gaussian.covariance(2,0) = 0;
         gaussian.covariance(2,1) = 0;
         gaussian.covariance(2,2) = scale*scale;
+        gaussian.covariance(2,3) = 0;
+        gaussian.covariance(2,4) = 0;
+        gaussian.covariance(2,5) = 0;
+
+        gaussian.covariance(3,0) = 0;
+        gaussian.covariance(3,1) = 0;
+        gaussian.covariance(3,2) = 0;
+        gaussian.covariance(3,3) = scale*scale;
+        gaussian.covariance(3,4) = 0;
+        gaussian.covariance(3,5) = 0;
+
+        gaussian.covariance(4,0) = 0;
+        gaussian.covariance(4,1) = 0;
+        gaussian.covariance(4,2) = 0;
+        gaussian.covariance(4,3) = 0;
+        gaussian.covariance(4,4) = scale*scale;
+        gaussian.covariance(4,5) = 0;
+
+        gaussian.covariance(5,0) = 0;
+        gaussian.covariance(5,1) = 0;
+        gaussian.covariance(5,2) = 0;
+        gaussian.covariance(5,3) = 0;
+        gaussian.covariance(5,4) = 0;
+        gaussian.covariance(5,5) = scale*scale;
         gaussian.weight = 1./(double)n;
         //        gaussian.weight = 1;
         gaussian.nPoint = 1;
@@ -109,34 +149,104 @@ void PCObject::initialGMM(double _scale)
         gmm.push_back(gaussian);
     }
 }
-
+*/
 void PCObject::initialGMM(double _scale, double _percent)
 {
     scale = _scale;
     percent = _percent;
     gmm.clear();
-
+    int dim;
     int n = points.size();
-    cout<<"# of points : "<<n<<endl;
+//    cout<<"# of points : "<<n<<endl;
     for(int i=0;i<n;i++){
-        Gaussian gaussian;
-        gaussian.mean = points.at(i).pos;
-        gaussian.covariance(0,0) = scale*scale;
-        gaussian.covariance(0,1) = 0;
-        gaussian.covariance(0,2) = 0;
-        gaussian.covariance(1,0) = 0;
-        gaussian.covariance(1,1) = scale*scale;
-        gaussian.covariance(1,2) = 0;
-        gaussian.covariance(2,0) = 0;
-        gaussian.covariance(2,1) = 0;
-        gaussian.covariance(2,2) = scale*scale;
-        gaussian.weight = 1./(double)n;
-        //        gaussian.weight = 1;
-        gaussian.nPoint = 1;
-        gaussian.cov_determinant = gaussian.covariance.determinant();
-        gaussian.cov_inverse = gaussian.covariance.inverse();
-        gaussian.initPrediction();
-        gmm.push_back(gaussian);
+        if(points.at(i).dim == 3){
+            dim = 3;
+            Gaussian gaussian(3);
+            gaussian.mean[0] = points.at(i).pos[0];
+            gaussian.mean[1] = points.at(i).pos[1];
+            gaussian.mean[2] = points.at(i).pos[2];
+
+            gaussian.covariance(0,0) = scale*scale;
+            gaussian.covariance(0,1) = 0;
+            gaussian.covariance(0,2) = 0;
+
+            gaussian.covariance(1,0) = 0;
+            gaussian.covariance(1,1) = scale*scale;
+            gaussian.covariance(1,2) = 0;
+
+            gaussian.covariance(2,0) = 0;
+            gaussian.covariance(2,1) = 0;
+            gaussian.covariance(2,2) = scale*scale;
+
+            gaussian.weight = 1./(double)n;
+            //        gaussian.weight = 1;
+            gaussian.nPoint = 1;
+            gaussian.cov_determinant = gaussian.covariance.determinant();
+            gaussian.cov_inverse = gaussian.covariance.inverse();
+            gaussian.initPrediction();
+            gmm.push_back(gaussian);
+        }
+        if(points.at(i).dim == 6){
+            dim = 6;
+            Gaussian gaussian(6);
+
+            gaussian.mean[0] = points.at(i).pos[0];
+            gaussian.mean[1] = points.at(i).pos[1];
+            gaussian.mean[2] = points.at(i).pos[2];
+            gaussian.mean[3] = points.at(i).rgb[0];
+            gaussian.mean[4] = points.at(i).rgb[1];
+            gaussian.mean[5] = points.at(i).rgb[2];
+
+            gaussian.covariance(0,0) = scale*scale;
+            gaussian.covariance(0,1) = 0;
+            gaussian.covariance(0,2) = 0;
+            gaussian.covariance(0,3) = 0;
+            gaussian.covariance(0,4) = 0;
+            gaussian.covariance(0,5) = 0;
+
+            gaussian.covariance(1,0) = 0;
+            gaussian.covariance(1,1) = scale*scale;
+            gaussian.covariance(1,2) = 0;
+            gaussian.covariance(1,3) = 0;
+            gaussian.covariance(1,4) = 0;
+            gaussian.covariance(1,5) = 0;
+
+            gaussian.covariance(2,0) = 0;
+            gaussian.covariance(2,1) = 0;
+            gaussian.covariance(2,2) = scale*scale;
+            gaussian.covariance(2,3) = 0;
+            gaussian.covariance(2,4) = 0;
+            gaussian.covariance(2,5) = 0;
+
+            gaussian.covariance(3,0) = 0;
+            gaussian.covariance(3,1) = 0;
+            gaussian.covariance(3,2) = 0;
+            gaussian.covariance(3,3) = scale*scale;
+            gaussian.covariance(3,4) = 0;
+            gaussian.covariance(3,5) = 0;
+
+            gaussian.covariance(4,0) = 0;
+            gaussian.covariance(4,1) = 0;
+            gaussian.covariance(4,2) = 0;
+            gaussian.covariance(4,3) = 0;
+            gaussian.covariance(4,4) = scale*scale;
+            gaussian.covariance(4,5) = 0;
+
+            gaussian.covariance(5,0) = 0;
+            gaussian.covariance(5,1) = 0;
+            gaussian.covariance(5,2) = 0;
+            gaussian.covariance(5,3) = 0;
+            gaussian.covariance(5,4) = 0;
+            gaussian.covariance(5,5) = scale*scale;
+
+            gaussian.weight = 1./(double)n;
+            //        gaussian.weight = 1;
+            gaussian.nPoint = 1;
+            gaussian.cov_determinant = gaussian.covariance.determinant();
+            gaussian.cov_inverse = gaussian.covariance.inverse();
+            gaussian.initPrediction();
+            gmm.push_back(gaussian);
+        }
     }
 
     //    double percent;
@@ -155,21 +265,21 @@ void PCObject::initialGMM(double _scale, double _percent)
 
     if(percent > 0){
         double last = pcl::getTime ();
-        simplify(SIMPLE_HCKL, 1./percent);
+        simplify(dim, SIMPLE_HCKL, 1./percent);
         //    simplify(SIMPLE_FA, 1./percent);
         double now = pcl::getTime ();
         double time = now-last;
-//        cout<<"time for simplification "<<time<<" second"<<endl;
+        //        cout<<"time for simplification "<<time<<" second"<<endl;
         static double total = 0.;
         total += time;
-//        cout<<"TOTAL time for simplification "<<total<<" second"<<endl;
+        //        cout<<"TOTAL time for simplification "<<total<<" second"<<endl;
     }
 }
 
-void PCObject::simplify(SIMPLE method, double ratio, int nCluster)
+void PCObject::simplify(int dim, SIMPLE method, double ratio, int nCluster)
 {
     // kmeans clustering
-    int dimensions = 3;
+    int dimensions = dim;
     int sampleCount = gmm.size();
     int clusterCount;
     if(nCluster == 0)
@@ -192,20 +302,24 @@ void PCObject::simplify(SIMPLE method, double ratio, int nCluster)
 
     for(int i =0;i<points.rows;i++)
     {
-        points.at<float>(i,0) = gmm.at(i).mean[0];
-        points.at<float>(i,1) = gmm.at(i).mean[1];
-        points.at<float>(i,2) = gmm.at(i).mean[2];
+        if(dimensions == 3){
+            points.at<float>(i,0) = gmm.at(i).mean[0];
+            points.at<float>(i,1) = gmm.at(i).mean[1];
+            points.at<float>(i,2) = gmm.at(i).mean[2];
+        }
+        if(dimensions == 6){
+            points.at<float>(i,0) = gmm.at(i).mean[0];
+            points.at<float>(i,1) = gmm.at(i).mean[1];
+            points.at<float>(i,2) = gmm.at(i).mean[2];
+            points.at<float>(i,3) = gmm.at(i).mean[3];
+            points.at<float>(i,4) = gmm.at(i).mean[4];
+            points.at<float>(i,5) = gmm.at(i).mean[5];
+        }
     }
     double last = pcl::getTime ();
     cv::kmeans(points, clusterCount, labels, cv::TermCriteria( CV_TERMCRIT_EPS+CV_TERMCRIT_ITER, 10, 1.0), 3, cv::KMEANS_PP_CENTERS, centers);
     double now = pcl::getTime ();
-    //        cout<<"time for kmeans clustering "<<now-last<<" second"<<endl;
 
-    //    }
-    //    else{
-    //        cv::Mat l(sampleCount,1,CV_16U,0);
-    //        labels = l;
-    //    }
     if(method == SIMPLE_HCKL || method == SIMPLE_HCL2){
         //    % our implementation of the method proposed in <Hierarchical clustering of
         //    % a mixture model> By Jacob Goldberger Sam Roweis in NIPS 2005.
@@ -226,12 +340,11 @@ void PCObject::simplify(SIMPLE method, double ratio, int nCluster)
                     k = labels.at<int>(i);
             }
             k = k + 1;
-            //            cout<<"cycle"<<cycle<<endl;
-            //            cout<<"Label"<<labels<<endl;
+
             double last = pcl::getTime ();
             // Refit
             for(int i=0;i<k;i++){
-                Gaussian gmmK;
+                Gaussian gmmK(dim);
                 vector<Gaussian> set;
                 gmmK.weight = 0.;
                 for(int j=0;j<n;j++){
@@ -242,14 +355,13 @@ void PCObject::simplify(SIMPLE method, double ratio, int nCluster)
                 }
                 int num = set.size();
                 gmmK.nPoint = num;
-                Eigen::Vector3d t;
-                t[0] = t[1] = t[2] = 0.;
+                Eigen::VectorXd t = Eigen::VectorXd::Zero(dim);
                 for(int j = 0;j<num;j++){
                     t = t + set.at(j).mean * set.at(j).weight;
                 } t = t / gmmK.weight;
                 gmmK.mean = t;
 
-                Eigen::Matrix3d cov_set = Eigen::Matrix3d::Zero();
+                Eigen::MatrixXd cov_set = Eigen::MatrixXd::Zero(dim,dim);
                 for(int j = 0;j<num;j++){
                     cov_set = cov_set + set.at(j).weight * (set.at(j).covariance + (gmmK.mean-set.at(j).mean)*(gmmK.mean-set.at(j).mean).transpose());
                 }
@@ -269,16 +381,16 @@ void PCObject::simplify(SIMPLE method, double ratio, int nCluster)
                 Dis[i] = new double[n];
 
             for(int i = 0;i<k;i++){
-                Gaussian gmmi, gmmj;
+                Gaussian gmmi(dim), gmmj(dim);
                 gmmi = gmmHC.at(i);
-                Eigen::Matrix3d covi = gmmi.covariance;
-                Eigen::Matrix3d covi_inv = gmmi.cov_inverse;
-                Eigen::Vector3d meani = gmmi.mean;
+                Eigen::MatrixXd covi = gmmi.covariance;
+                Eigen::MatrixXd covi_inv = gmmi.cov_inverse;
+                Eigen::VectorXd meani = gmmi.mean;
                 double deti = gmmi.cov_determinant;
                 for (int j = 0;j<n;j++){
                     gmmj = gmm.at(j);
-                    Eigen::Matrix3d covj = gmmj.covariance;
-                    Eigen::Vector3d meanj = gmmj.mean;
+                    Eigen::MatrixXd covj = gmmj.covariance;
+                    Eigen::VectorXd meanj = gmmj.mean;
                     double detj = gmmj.cov_determinant;
 
                     // KL distance
@@ -289,11 +401,11 @@ void PCObject::simplify(SIMPLE method, double ratio, int nCluster)
                     // L2 distance
                     if(method == SIMPLE_HCL2){
                         double energy1, energy2, energy3;
-                        Eigen::Matrix3d invij = (covi+covj).inverse();
+                        Eigen::MatrixXd invij = (covi+covj).inverse();
                         double a = (meani-meanj).transpose()*invij*(meani-meanj);
-                        energy1 = 1./sqrt(pow(2*pi,3)*(covi+covi).determinant());
-                        energy2 = 1./sqrt(pow(2*pi,3)*(covi+covj).determinant())*exp(-0.5*a);
-                        energy3 = 1./sqrt(pow(2*pi,3)*(covj+covj).determinant());
+                        energy1 = 1./sqrt(pow(2*pi,dim)*(covi+covi).determinant());
+                        energy2 = 1./sqrt(pow(2*pi,dim)*(covi+covj).determinant())*exp(-0.5*a);
+                        energy3 = 1./sqrt(pow(2*pi,dim)*(covj+covj).determinant());
                         Dis[i][j] = gmmi.weight*gmmj.weight*(energy1-2*energy2+energy3);
                     }
                 }
@@ -358,7 +470,7 @@ void PCObject::simplify(SIMPLE method, double ratio, int nCluster)
         }
         gmm = gmmHC;
     }
-
+    /*
     else if(method == SIMPLE_FA){
         //        % OurGMM0.m approximates a given mixture model using a simpler one with fewer components.
         //        % Output: a simpler mixture model, with the weight, center, and covariance of each component specified.
@@ -395,7 +507,7 @@ void PCObject::simplify(SIMPLE method, double ratio, int nCluster)
             //            cout<<"Label"<<labels<<endl;
             for ( int i=0;i<K;i++){
                 //                cout<<"class "<<i<<endl;
-                Gaussian gmmK;
+                Gaussian gmmK(dim);
                 Eigen::Vector3d mean;
                 Eigen::Matrix3d cov;
                 double weight;
@@ -601,9 +713,9 @@ void PCObject::simplify(SIMPLE method, double ratio, int nCluster)
         }
         gmm = gmmFA;
     }
-
+*/
 }
-
+/*
 double PCObject::L2ofGMMandPoints(double scale)
 {
     // L2 distance
@@ -662,21 +774,42 @@ double PCObject::L2ofGMMandPoints(double scale)
     }
     return energy1 - 2*energy2 + energy3;
 }
-
+*/
 double PCObject::evalGMM(Point x)
 {
     double eval = 0.;
+    int dim = x.dim;
     for(int i=0;i<gmm.size();i++){
-        Eigen::Vector3d mean;
+        Eigen::VectorXd mean;
         mean = gmm.at(i).mean;
         double weight = gmm.at(i).weight;
-        Eigen::Matrix3d inv = gmm.at(i).cov_inverse;
+        Eigen::MatrixXd inv = gmm.at(i).cov_inverse;
+        Eigen::VectorXd pos(dim);
+        if(dim == 3){
+            pos[0] = x.pos[0];
+            pos[1] = x.pos[1];
+            pos[2] = x.pos[2];
+        }
+        if(dim == 6){
+            pos[0] = x.pos[0];
+            pos[1] = x.pos[1];
+            pos[2] = x.pos[2];
+            pos[3] = x.rgb[0];
+            pos[4] = x.rgb[1];
+            pos[5] = x.rgb[2];
+        }
 
-        double a = (x.pos-mean).transpose()*inv*(x.pos-mean);
-        //        eval += weight * 1./sqrt(pow(2*pi,3)*det) * exp(-0.5*a);
-        eval += weight * exp(-0.5*a);
+        double a = (pos-mean).transpose()*inv*(pos-mean);
+        double det = gmm.at(i).covariance.determinant();
+        eval += weight * 1./sqrt(pow(2*pi,dim)*det) * exp(-0.5*a);
+        //        cout<<"pos "<<pos<<endl;
+        //        cout<<"mean "<<mean<<endl;
+
+        //        eval += weight * exp(-0.5*a);
     }
+
     //    return eval * gmm.size();
+
     return eval;
 }
 
@@ -684,21 +817,36 @@ double PCObject::evalGMM(Point x)
 double PCObject::evalNormedGMM(Point x, double den)
 {
     double eval = 0.;
+    int dim = x.dim;
     for(int i=0;i<gmm.size();i++){
-        Eigen::Vector3d mean;
+        Eigen::VectorXd mean;
         mean = gmm.at(i).mean;
-        Eigen::Matrix3d cov = gmm.at(i).covariance;
+        Eigen::MatrixXd cov = gmm.at(i).covariance;
         double weight = gmm.at(i).weight;
-        Eigen::Matrix3d inv = gmm.at(i).cov_inverse;
+        Eigen::MatrixXd inv = gmm.at(i).cov_inverse;
+        Eigen::VectorXd pos(dim);
+        if(dim == 3){
+            pos[0] = x.pos[0];
+            pos[1] = x.pos[1];
+            pos[2] = x.pos[2];
+        }
+        if(dim == 6){
+            pos[0] = x.pos[0];
+            pos[1] = x.pos[1];
+            pos[2] = x.pos[2];
+            pos[3] = x.rgb[0];
+            pos[4] = x.rgb[1];
+            pos[5] = x.rgb[2];
+        }
 
-        double a = (x.pos-mean).transpose()*inv*(x.pos-mean);
+        double a = (pos-mean).transpose()*inv*(pos-mean);
         double det = gmm.at(i).covariance.determinant();
-        //        eval += weight * 1./sqrt(pow(2*pi,3)*det) * exp(-0.5*a);
-        eval += weight * 1./sqrt(pow(2*pi,3)*det) * exp(-0.5*a);
+        eval += weight * 1./sqrt(pow(2*pi,dim)*det) * exp(-0.5*a);
+        //        eval += weight * exp(-0.5*a);
     }
     return eval * gmm.size() / den;
 }
-
+/*
 double PCObject::evalClosestGMM(Point x)
 {
     double max = 0.;
@@ -717,6 +865,7 @@ double PCObject::evalClosestGMM(Point x)
     }
     return max;
 }
+*/
 void PCObject::mergeTwoGMMs(PCObject* gmm1, PCObject* gmm2)
 {
     gmm.clear();
@@ -737,22 +886,20 @@ void PCObject::gaussianTrackingInit(int _window_short, int _window_long, int _ma
     window_short = _window_short;
     window_long = _window_long;
 
-    imftGaussians.reset(new IMFT<Gaussian>(window_short, window_long, _maxID, _weight_gaussian, _weight_gaussian_fast));
+    imftGaussians = new IMFT<Gaussian>(window_short, window_long, _maxID, _weight_gaussian, _weight_gaussian_fast);
 
     cnt = 0;
 
     frame.clear();
-    for(int i=0;i<gmm.size();i++){        
-        shared_ptr<Gaussian> ptr(new Gaussian);
-        *ptr = gmm.at(i);
-        frame.push_back(ptr);
+    for(int i=0;i<gmm.size();i++){
+        frame.push_back(&gmm.at(i));
     }
     imftGaussians->setFrame(frame, cnt);
     imftGaussians->matching();
     //    imftGaussians->confirmDGraph();
     imftGaussians->updateTracks();
 
-    gaussianTracks = *(imftGaussians->extractTracks());
+    gaussianTracks = (GaussianTrackContainer*)imftGaussians->extractTracks();
 
     cnt++;
 }
@@ -761,21 +908,19 @@ void PCObject::gaussianTracking()
 {
     frame.clear();
     for(int i=0;i<gmm.size();i++){
-        shared_ptr<Gaussian> ptr(new Gaussian);
-        *ptr = gmm.at(i);
-        frame.push_back(ptr);
+        frame.push_back(&gmm.at(i));
     }
     imftGaussians->setFrame(frame, cnt);
     imftGaussians->matching();
-//    imftGaussians->confirmDGraph();
+    //    imftGaussians->confirmDGraph();
     imftGaussians->updateTracks();
 
-    gaussianTracks = *(imftGaussians->extractTracks());
+    gaussianTracks = (GaussianTrackContainer*)imftGaussians->extractTracks();
 
     // update gmm
     gmm.clear();
-    for(int i=0;i<gaussianTracks.numTracks();i++){
-        gmm.push_back(gaussianTracks.tracks.at(i)->lastFrame().object);
+    for(int i=0;i<gaussianTracks->numTracks();i++){
+        gmm.push_back(gaussianTracks->tracks.at(i)->lastFrame().object);
     }
 
 
@@ -792,129 +937,160 @@ void PCObject::updatePredictiveParameters()
     }
 }
 
-void PCObject::updateEdge()
-{
-    double sum = 0.;
-    double newAvgWeight = 0.;
-    int num = edges.size();
-    for(int i=0;i<num;i++){
-        Edge e = edges.at(i);
-        sum += e.weight;
-    }
-    newAvgWeight = sum / num;
-
-    if(filteredWeight == 0)
-        filteredWeight = newAvgWeight;
-    else{
-        double diff = filteredWeight - newAvgWeight;
-        double sumWeight = 0;
-        for(int i=1;i<10;i++){
-            diffWeight[i] = diffWeight[i-1];
-            sumWeight += diffWeight[i];
-        }
-        diffWeight[0] = diff;
-        sumWeight += diff;
-
-        cout<<"DIFF "<<diff<<endl;
-        double factor = 2.5;
-//        if(newDiffweight > 0 && acc > 0){
-            // update each edge to reduce as much as diff and check the connectivity
-            for(ListGraph::EdgeIt e(*topology_graph); e != INVALID; ++e){
-//                ListGraph::Edge edge = (*topology_edgeMap)[e];
-                (*topology_edgeMap)[e] += sumWeight*factor;
-                if((*topology_edgeMap)[e] < 0.8){
-                    // delete edge
-                    topology_graph->erase(e);
-                    cout<<"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDELETEDDDDDDDDDDDDDDDDDDDDd"<<endl;
-                }
-            }
-//        }
-            filteredWeight = 0.9 * filteredWeight + 0.1 * newAvgWeight;
-    }
-
-//    avgWeight = newAvgWeight;
-
-}
-
 void PCObject::makeTopology()
 {
-//    if(topology_nodeMap != NULL) {delete topology_nodeMap; topology_nodeMap = NULL;}
-//    if(topology_edgeMap != NULL) {delete topology_edgeMap; topology_edgeMap = NULL;}
-//    if(topology_graph != NULL) {delete topology_graph; topology_graph = NULL;}
-
+    //    if(topology_nodeMap != NULL) delete topology_nodeMap;
+    //    if(topology_edgeMap != NULL) delete topology_edgeMap;
+    //    if(topology_graph != NULL) delete topology_graph;
     topology_graph->clear();
     edges.clear();
 
+    int dim;
     // make node
-    cout<<"GMM SIZE"<<gmm.size()<<endl;
     for(int i=0;i<gmm.size();i++){
         ListGraph::Node node = topology_graph->addNode();
         (*topology_nodeMap)[node] = gmm.at(i);
+        dim = gmm.at(i).dim;
     }
     // make edge
+    double max_pos = 0;
+    double max_vel = 0;
+
+    vector<Edge_spatial> edge_init;
     for(ListGraph::NodeIt u(*topology_graph); u != INVALID; ++u){
         ListGraph::NodeIt v = u;
-//        ++v;
         for(v; v != INVALID; ++v){
-            double weight = topology_weight((*topology_nodeMap)[u], (*topology_nodeMap)[v]);
-//            std::cout<<weight<<endl;
-            if(weight > 0.9){
-                ListGraph::Edge edge = topology_graph->addEdge(u,v);
-                (*topology_edgeMap)[edge] = weight;
+            double weight_pos = topology_posweight_rev((*topology_nodeMap)[u], (*topology_nodeMap)[v]);
+            double weight_vel = topology_velweight_rev((*topology_nodeMap)[u], (*topology_nodeMap)[v]);
 
-                Edge e;
-                e.u.pos = (*topology_nodeMap)[u].mean;
-                e.v.pos = (*topology_nodeMap)[v].mean;
-                e.weight = weight;
-                edges.push_back(e);
+            Edge_spatial edge;
+            edge.u = u;
+            edge.v = v;
+            edge.weight_pos = weight_pos;
+            edge.weight_vel = weight_vel;
+            edge_init.push_back(edge);
+
+            if(weight_pos > max_pos) max_pos = weight_pos;
+            if(weight_vel > max_vel) max_vel = weight_vel;
+        }
+    }
+
+    // make edge
+    for(int i= 0;i<edge_init.size();i++){
+        double weight_pos = 1 - edge_init.at(i).weight_pos / max_pos;
+        double weight_vel = 1 - edge_init.at(i).weight_vel / max_vel;
+        double weight = weight_pos * alpha + weight_vel * (1-alpha);
+
+        if(edge_init.size() <= 15 || weight > th_edge){ // store the edge
+            ListGraph::Edge edge = topology_graph->addEdge(edge_init.at(i).u,edge_init.at(i).v);
+            (*topology_edgeMap)[edge] = weight;
+
+            Edge e;
+            if(dim == 3){
+                e.u.pos[0] = (*topology_nodeMap)[edge_init.at(i).u].mean[0];
+                e.u.pos[1] = (*topology_nodeMap)[edge_init.at(i).u].mean[1];
+                e.u.pos[2] = (*topology_nodeMap)[edge_init.at(i).u].mean[2];
+
+                e.v.pos[0] = (*topology_nodeMap)[edge_init.at(i).v].mean[0];
+                e.v.pos[1] = (*topology_nodeMap)[edge_init.at(i).v].mean[1];
+                e.v.pos[2] = (*topology_nodeMap)[edge_init.at(i).v].mean[2];
+
             }
+            if(dim == 6){
+                e.u.pos[0] = (*topology_nodeMap)[edge_init.at(i).u].mean[0];
+                e.u.pos[1] = (*topology_nodeMap)[edge_init.at(i).u].mean[1];
+                e.u.pos[2] = (*topology_nodeMap)[edge_init.at(i).u].mean[2];
+                e.u.rgb[0] = (*topology_nodeMap)[edge_init.at(i).u].mean[3];
+                e.u.rgb[1] = (*topology_nodeMap)[edge_init.at(i).u].mean[4];
+                e.u.rgb[2] = (*topology_nodeMap)[edge_init.at(i).u].mean[5];
+
+                e.v.pos[0] = (*topology_nodeMap)[edge_init.at(i).v].mean[0];
+                e.v.pos[1] = (*topology_nodeMap)[edge_init.at(i).v].mean[1];
+                e.v.pos[2] = (*topology_nodeMap)[edge_init.at(i).v].mean[2];
+                e.v.rgb[0] = (*topology_nodeMap)[edge_init.at(i).v].mean[3];
+                e.v.rgb[1] = (*topology_nodeMap)[edge_init.at(i).v].mean[4];
+                e.v.rgb[2] = (*topology_nodeMap)[edge_init.at(i).v].mean[5];
+
+            }
+            e.weight = weight;
+            edges.push_back(e);
         }
     }
 }
 
 double PCObject::topology_weight(Gaussian g1, Gaussian g2)
 {
-//    double maxDist = 23000;   // for 0.02 scale / 0.2 percent : lower -> weaker
-    double maxDist = 40000;   // for 0.02 scale / 0.1 percent : lower -> weaker
-//    double maxDist = 150000;   // for 0.01 scale
+    int dim = g1.dim;
+
+    //    double maxDist = 23000;   // for 0.02 scale / 0.2 percent : lower -> weaker
+    double maxDist = 55000000;   // for 0.02 scale / 0.1 percent : lower -> weaker
+    //    double maxDist = 150000;   // for 0.01 scale
     double maxVel = 0.02;
     double energy1 = 0.;
-            Eigen::Matrix3d cov = g1.covariance + g1.covariance;
-            Eigen::Vector3d mean = g1.mean - g1.mean;
-            Eigen::Matrix3d invij = cov.inverse();
-            double a = mean.transpose()*invij*mean;
-            double gauss = 1./sqrt(pow(2*pi,3)*cov.determinant())*exp(-0.5*a);
-            energy1 += gauss;
+    Eigen::MatrixXd cov = g1.covariance + g1.covariance;
+    Eigen::VectorXd mean = g1.mean - g1.mean;
+    Eigen::MatrixXd invij = cov.inverse();
+    double a = mean.transpose()*invij*mean;
+    double gauss = 1./sqrt(pow(2*pi,dim)*cov.determinant())*exp(-0.5*a);
+    energy1 += gauss;
 
     double energy2 = 0.;
 
-            cov = g1.covariance + g2.covariance;
-            mean = g1.mean - g2.mean;
-            invij = cov.inverse();
-            a = mean.transpose()*invij*mean;
-            gauss = 1./sqrt(pow(2*pi,3)*cov.determinant())*exp(-0.5*a);
-            energy2 += gauss;
+    cov = g1.covariance + g2.covariance;
+    mean = g1.mean - g2.mean;
+    invij = cov.inverse();
+    a = mean.transpose()*invij*mean;
+    gauss = 1./sqrt(pow(2*pi,dim)*cov.determinant())*exp(-0.5*a);
+    energy2 += gauss;
 
     double energy3 = 0.;
-            cov = g2.covariance + g2.covariance;
-            mean = g2.mean - g2.mean;
-            invij = cov.inverse();
-            a = mean.transpose()*invij*mean;
-            gauss = 1./sqrt(pow(2*pi,3)*cov.determinant())*exp(-0.5*a);
-            energy3 += gauss;
+    cov = g2.covariance + g2.covariance;
+    mean = g2.mean - g2.mean;
+    invij = cov.inverse();
+    a = mean.transpose()*invij*mean;
+    gauss = 1./sqrt(pow(2*pi,dim)*cov.determinant())*exp(-0.5*a);
+    energy3 += gauss;
     double posCloseness = (maxDist - (energy1 - 2*energy2 + energy3))/maxDist;
-    Eigen::Vector3d velDiff = g1.velocity - g2.velocity;
+    Eigen::VectorXd velDiff = g1.velocity - g2.velocity;
     double velCloseness =  (maxVel - velDiff.norm())/maxVel;
-//    cout<<posCloseness<<endl;
-//    return 0.98 * posCloseness + 0.02 * velCloseness;
+    //    cout<<velDiff.norm()<<endl;
+    //        return 0.98 * posCloseness + 0.02 * velCloseness;
     return 1. * posCloseness + 0. * velCloseness;
+    //    return 1;
+}
+
+
+double PCObject::topology_posweight_rev(Gaussian g1, Gaussian g2)
+{
+    // KL divergence between g1 and g2
+    int dim = g1.dim;
+
+    double kl12;
+    double kl21;
+
+    Eigen::MatrixXd cov = g1.cov_inverse * g2.covariance;
+    Eigen::VectorXd mean = g2.mean - g1.mean;
+    kl12 = (cov.trace() + mean.transpose()*g2.cov_inverse*mean - log(g1.covariance.norm() / g2.covariance.norm()) - dim)/2.;
+
+    cov = g2.cov_inverse * g1.covariance;
+    mean = g1.mean - g2.mean;
+    kl21 = (cov.trace() + mean.transpose()*g1.cov_inverse*mean - log(g2.covariance.norm() / g1.covariance.norm()) - dim)/2.;
+
+    return kl12 + kl21;
+}
+
+
+double PCObject::topology_velweight_rev(Gaussian g1, Gaussian g2)
+{
+    Eigen::VectorXd velDiff = g1.velocity - g2.velocity;
+    return velDiff.norm();
 }
 
 void PCObject::calculateVelocity()
 {
-    for(int i=0;i<gaussianTracks.numTracks();i++){
-        Gaussian last = gaussianTracks.tracks.at(i)->lastFrame().object;
-        Gaussian before = gaussianTracks.tracks.at(i)->getFrameFromLast(1).object;
+    for(int i=0;i<gaussianTracks->numTracks();i++){
+        Gaussian last = gaussianTracks->tracks.at(i)->lastFrame().object;
+        Gaussian before = gaussianTracks->tracks.at(i)->getFrameFromLast(1).object;
         gmm.at(i).velocity[0] = last.mean[0] - before.mean[0];
         gmm.at(i).velocity[1] = last.mean[1] - before.mean[1];
         gmm.at(i).velocity[2] = last.mean[2] - before.mean[2];
@@ -929,9 +1105,9 @@ int PCObject::componentGraph(vector<PCObject> &newObjects)
         return 0;
     else{
         ListGraph::NodeMap<int> component_nodeMap(*topology_graph);
-//        component_nodeMap = new ListGraph::NodeMap<Gaussian>(*topology_graph);
+        //        component_nodeMap = new ListGraph::NodeMap<Gaussian>(*topology_graph);
         int num = connectedComponents(*topology_graph, component_nodeMap);
-//        newObjects.resize(num);
+        //        newObjects.resize(num);
         for(int i=0;i<num;i++){
             PCObject object;
             newObjects.push_back(object);
@@ -941,6 +1117,7 @@ int PCObject::componentGraph(vector<PCObject> &newObjects)
             int id = (component_nodeMap)[u];
             newObjects.at(id).gmm.push_back((*topology_nodeMap)[u]);
         }
+        /*
         // check velocity difference
         vector<double> velNorm;
         for(int i=0;i<num;i++){
@@ -965,9 +1142,10 @@ int PCObject::componentGraph(vector<PCObject> &newObjects)
         }
         entropy = -entropy;
 //        cout<<"ENTROPY "<<entropy<<endl;
-//            if(fabs(velNorm.at(i)-velNorm.at(i-1)) < 50000)
-//                return 0;
-//        }
+        //            if(fabs(velNorm.at(i)-velNorm.at(i-1)) < 50000)
+        //                return 0;
+        //        }
+        */
 
         // point matching
         double sumSizeGMMs = 0.;

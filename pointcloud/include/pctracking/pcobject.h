@@ -18,8 +18,6 @@
 #include "gaussian.h"
 #include "imft.h"
 #include "gaussiantrackcontainer.h"
-#include <boost/shared_ptr.hpp>
-using namespace boost;
 
 typedef enum{
     SIMPLE_HCKL, SIMPLE_HCL2, SIMPLE_FA
@@ -35,8 +33,15 @@ public:
         Point v;
         double weight;
     }Edge;
+    typedef struct{
+        ListGraph::Node u;
+        ListGraph::Node v;
+        double weight_vel;
+        double weight_pos;
+    }Edge_spatial;
+
 public:
-    PCObject();
+    PCObject();    
     PCObject(int _id);
     ~PCObject();
 
@@ -44,12 +49,12 @@ public:
     void insert(Point p);
     Point getCentroid();
     void initialGMM(double _scale, double _percent);
-    void initialGMM(double _scale);
+//    void initialGMM(double _scale);
     double evalGMM(Point x);
-    double evalClosestGMM(Point x);
+//    double evalClosestGMM(Point x);
     double evalNormedGMM(Point x, double den);
-    void simplify(SIMPLE method, double ratio, int nCluster=0);
-    double L2ofGMMandPoints(double scale);
+    void simplify(int dim, SIMPLE method, double ratio, int nCluster=0);
+//    double L2ofGMMandPoints(double scale);
     void setTransParam(vnl_vector<double> param);
     void mergeTwoGMMs(PCObject* gmm1, PCObject* gmm2);
     void setScale(double _scale){scale = _scale;};
@@ -60,8 +65,9 @@ public:
     void calculateVelocity();
     void makeTopology();
     double topology_weight(Gaussian g1, Gaussian g2);
+    double topology_posweight_rev(Gaussian g1, Gaussian g2);
+    double topology_velweight_rev(Gaussian g1, Gaussian g2);
     int componentGraph(vector<PCObject> &newObjects);
-    void updateEdge();
 public:
     vector<Point> points;
     vector<Gaussian> gmm;
@@ -70,16 +76,18 @@ public:
     vnl_vector<double> trans_param;
     bool isParamExist;
 
-    shared_ptr< IMFT<Gaussian> > imftGaussians;
-    IMFT<Gaussian>::TrackContainerT gaussianTracks;
+    IMFT<Gaussian> *imftGaussians;
+    GaussianTrackContainer *gaussianTracks;
     int cnt;
-    vector< shared_ptr<Gaussian> > frame;
+    vector<Gaussian*> frame;
 
 public: // topology
-    shared_ptr<ListGraph> topology_graph;
-    shared_ptr< ListGraph::NodeMap<Gaussian> > topology_nodeMap;
-    shared_ptr< ListGraph::EdgeMap<double> > topology_edgeMap;
+    ListGraph* topology_graph;
+    ListGraph::NodeMap<Gaussian> *topology_nodeMap;
+    ListGraph::EdgeMap<double> *topology_edgeMap;
     vector<Edge> edges;
+    double alpha;
+    double th_edge;
 //    double avgWeight;
     double *diffWeight;
     double filteredWeight;

@@ -5,6 +5,14 @@ PCTrackContainer::PCTrackContainer(int _maxFrame)
     :TrackContainer<PCObject>::TrackContainer(_maxFrame)
 {
     oldCnt = 0;
+    isUpdated = 1;
+}
+
+PCTrackContainer::PCTrackContainer()
+    :TrackContainer<PCObject>::TrackContainer(1000)
+{
+    oldCnt = 0;
+    isUpdated = 1;
 }
 
 void PCTrackContainer::toPointCloudXYZI(Cloud &cloudOut)
@@ -43,8 +51,8 @@ visualization_msgs::Marker PCTrackContainer::toMarkerEdges()
     edgeMarker.scale.x = 0.003;
     edgeMarker.color.a = 1;
     edgeMarker.color.r = 1;
-    edgeMarker.color.g = 1;
-    edgeMarker.color.b = 1;
+    edgeMarker.color.g = 0;
+    edgeMarker.color.b = 0;
 
 
     for(int i=0;i<numTracks();i++){
@@ -99,8 +107,11 @@ visualization_msgs::MarkerArray PCTrackContainer::toMarkerGMMs()
                 gmmMarker.pose.position.y = gmm.mean[1];
                 gmmMarker.pose.position.z = gmm.mean[2];
 
-
-                Eigen::SelfAdjointEigenSolver<Eigen::Matrix3d> eigensolver(gmm.covariance);
+                Eigen::Matrix3d cov3d;
+                for(int i=0;i<3;i++)
+                    for(int j=0;j<3;j++)
+                        cov3d(i,j)=gmm.covariance(i,j);
+                Eigen::SelfAdjointEigenSolver<Eigen::Matrix3d> eigensolver(cov3d);
                 Eigen::Vector3d eigenvalues = eigensolver.eigenvalues();
                 Eigen::Matrix3d eigenvectors = eigensolver.eigenvectors();
 
@@ -191,7 +202,7 @@ visualization_msgs::MarkerArray PCTrackContainer::toMarkerGMMs()
 
             }
             // delete old marker
-            if(cnt < oldCnt){
+            if(cnt < oldCnt && !isUpdated){
                 for(int j=cnt+1;j<=oldCnt;j++){
                     visualization_msgs::Marker gmmMarker;
                     gmmMarker.header.frame_id = "/origin";
@@ -205,7 +216,41 @@ visualization_msgs::MarkerArray PCTrackContainer::toMarkerGMMs()
                 }
             }
             oldCnt = cnt;
+            isUpdated = 0;
+
 //        }
     }
     return gmmMarkers;
+}
+
+void PCTrackContainer::evaluate()
+{
+    numTruePoints = 0;
+    numFalsePoints = 0;
+    numTotalPoints = 0;
+
+    for(int i=0;i<numTracks();i++){
+        if(tracks.at(i)->lastFrame().time == currentT){
+            PCObject object;
+            object = tracks.at(i)->lastFrame().object;
+            int numBlack = 0;
+            int numWhite = 0;
+            for(int j=0;j<object.points.size();j++){
+                Point point = object.points.at(j);
+                double avgrgb = (point.rgb[0]*3000 + point.rgb[1]*3000 + point.rgb[2]*3000) / 3;
+
+                if(avgrgb > 128) numWhite ++;
+                else numBlack ++;
+            }
+            if(numWhite > numBlack){
+                numTruePoints += numWhite;
+                numFalsePoints += numBlack;
+            }
+            else{
+                numTruePoints += numBlack;
+                numFalsePoints += numWhite;
+            }
+            numTotalPoints += object.points.size();
+        }
+    }
 }

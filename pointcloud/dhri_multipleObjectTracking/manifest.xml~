@@ -1,0 +1,15 @@
+<package>
+  <description brief="dhri_multipleObjectTracking">
+
+     dhri_multipleObjectTracking
+
+  </description>
+  <author>dhri-karl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dhri_multipleObjectTracking</url>
+  <depend package="roscpp"/>
+
+</package>
+
+

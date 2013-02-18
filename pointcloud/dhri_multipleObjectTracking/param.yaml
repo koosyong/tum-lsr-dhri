@@ -1,0 +1,11 @@
+/dhri/multipleObjectTracking/sub/topic: '/dhri/points/filtered'
+/dhri/multipleObjectTracking/pub/points/trackID: '/dhri/points/trackID'
+/dhri/multipleObjectTracking/pub/markers/trackID: '/dhri/markers/trackID'
+/dhri/multipleObjectTracking/pub/markers/gmms: '/dhri/markers/gmms'
+/dhri/multipleObjectTracking/pub/markers/edges: '/dhri/markers/edges'
+/dhri/multipleObjectTracking/pub/gmmreg/model: '/dhri/points/model'
+/dhri/multipleObjectTracking/pub/gmmreg/scene: '/dhri/points/scene'
+/dhri/multipleObjectTracking/param/3d6d: 3
+/dhri/multipleObjectTracking/param/samplingRatio: 15
+/dhri/multipleObjectTracking/param/siimplifyRatio: 15
+/dhri/multipleObjectTracking/param/segmentTolerance: 0.03
